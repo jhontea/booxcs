@@ -1,0 +1,3637 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans|Merriweather:700);
+/**
+ * Smiley project CSS 
+ */
+
+/* generic emoji styles */
+.wp-emoji, .wp-emoji:before {
+	display: inline-block !important; /* shouldn't have been necessary, but some themes set this to static */
+}
+
+.wp-emoji {
+	position: relative !important; /* shouldn't have been necessary, but some themes set this to static */
+	vertical-align: bottom;
+
+	/* this will be a line-height tall wrapper for vertically centering the smiley */
+	width: 1.375em;
+	overflow: hidden;
+	white-space: nowrap;	
+	text-indent: 9999px;
+	min-height: 1.2em; /* for really small lineheights */
+}
+
+/* Firefox does weird things with text-indent and selection */
+@-moz-document url-prefix() { 
+	.wp-emoji {
+		text-indent: 0;
+		text-align: center;
+		color: rgba(255,255,255,0);
+		overflow: visible;
+	}
+}
+
+/* @noflip */
+.wp-emoji:before {
+	/* vertically center the smiley */
+	position: absolute;
+	content: "";
+	
+	/* height/width for IE, Firefox and non-webkit browsers */
+	height: 1.25em;
+	width: 1.375em;
+	margin-top: -0.625em; /* minus half the height of the smiley */
+
+	left: 0;
+	top: 50%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 100% 100%;
+}
+
+/* WebKit specific hacks */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.wp-emoji {
+		width: 1.35em;
+	}
+    .wp-emoji:before {
+		height: 1.4em;
+		width: 1.35em;
+		margin-top: -0.7em; /* minus half the height of the smiley */
+    }
+}
+
+/* IE specific hacks */
+@media screen and (min-width:0\0) {
+	.wp-emoji {
+		height: 1.2em;
+		width: 1.38em;
+	}
+    .wp-emoji:before {
+		width: 1.38em;
+    }
+}
+
+/* individual smileys */
+	/* PNGs are for IE8 fallbacks. Let's remove them some day please */
+.wp-emoji-smile:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/smile.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/smile.svg), none;
+}
+
+.wp-emoji-wink:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/wink.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/wink.svg), none;
+}
+
+.wp-emoji-bigsmile:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/bigsmile.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/bigsmile.svg), none;
+}
+
+.wp-emoji-heart:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/heart.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/heart.svg), none;
+}
+
+.wp-emoji-neutral:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/neutral.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/neutral.svg), none;
+}
+
+.wp-emoji-uneasy:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/uneasy.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/uneasy.svg), none;
+}
+
+.wp-emoji-lol:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/lol.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/lol.svg), none;
+}
+
+.wp-emoji-sad:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/sad.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/sad.svg), none;
+}
+
+.wp-emoji-cry:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/cry.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/cry.svg), none;
+}
+
+.wp-emoji-evilgrin:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/evilgrin.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/evilgrin.svg), none;
+}
+
+.wp-emoji-twisted:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/twisted.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/twisted.svg), none;
+}
+
+.wp-emoji-evil:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/evil.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/evil.svg), none;
+}
+
+.wp-emoji-surprised:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/surprised.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/surprised.svg), none;
+}
+
+.wp-emoji-tongue:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/tongue.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/tongue.svg), none;
+}
+
+.wp-emoji-angry:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/angry.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/angry.svg), none;
+}
+
+.wp-emoji-burrito:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/burrito.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/burrito.svg), none;
+}
+.wp-emoji-burrito, .wp-emoji-burrito:before {
+	width: 1.6em;
+}
+
+.wp-emoji-wordpress:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/wordpress.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/wordpress.svg), none;
+}
+
+.wp-emoji-mindblown:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/mindblown.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/mindblown.svg), none;
+}
+
+.wp-emoji-mindblown-alt:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/mindblown-alt.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/mindblown-alt.svg), none;
+}
+
+.wp-emoji-martini:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/martini.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/martini.svg), none;
+}
+
+.wp-emoji-whiterussian:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/whiterussian.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/whiterussian.svg), none;
+}
+
+.wp-emoji-star:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/star.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/star.svg), none;
+}
+
+.wp-emoji-developer:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/developer.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/developer.svg), none;
+}
+.wp-emoji-developer, .wp-emoji-developer:before {
+	width: 1.5em;
+}
+
+.wp-emoji-facepalm:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/facepalm.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/facepalm.svg), none;
+}
+.wp-emoji-facepalm, .wp-emoji-facepalm:before {
+	width: 1.4em;
+}
+
+.wp-emoji-bear:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/bear.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/bear.svg), none;
+}
+
+.wp-emoji-mrgreen:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/mrgreen.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/mrgreen.svg), none;
+}
+
+.wp-emoji-arrow:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/arrow.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/arrow.svg), none;
+}
+
+.wp-emoji-confused:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/confused.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/confused.svg), none;
+}
+
+.wp-emoji-cool:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/cool.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/cool.svg), none;
+}
+
+.wp-emoji-idea:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/idea.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/idea.svg), none;
+}
+
+.wp-emoji-blush:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/blush.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/blush.svg), none;
+}
+
+.wp-emoji-oops:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/oops.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/oops.svg), none;
+}
+
+.wp-emoji-rolleyes:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/rolleyes.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/rolleyes.svg), none;
+}
+
+.wp-emoji-exclaim:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/exclaim.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/exclaim.svg), none;
+}
+
+.wp-emoji-question:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/question.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/question.svg), none;
+}
+
+.wp-emoji-kitten:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/kitten.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/kitten.svg), none;
+}
+
+.wp-emoji-momface:before {
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/ie/momface.png);
+	background-image: url(/wp-content/mu-plugins/smileyproject/default/momface.svg), none;
+}
+
+
+/* to enable text-selection of smileys in Firefox, we can't use text-indent or overflow to hide the text, so letterspace it instead */
+@-moz-document url-prefix() { 
+	.wp-emoji-rolleyes {
+		letter-spacing: -.2em;
+	}
+
+	.wp-emoji-oops, .wp-emoji-idea, .wp-emoji-confused {
+		letter-spacing: -.25em;
+	}
+
+	.wp-emoji-burrito, .wp-emoji-arrow, .wp-emoji-bear, .wp-emoji-star {
+		letter-spacing: -.3em;
+	}
+
+	.wp-emoji-developer, .wp-emoji-mrgreen, .wp-emoji-facepalm {
+		letter-spacing: -.35em;
+	}
+
+}
+
+
+
+
+/**
+ * Like Button toolbar button, loading text & container styles
+ *
+ * @todo: doesn't look like "style.css" is used anymore.
+ */
+
+
+/* Master container */
+#jp-post-flair {
+	padding-top: .5em;
+}
+
+/* Overall Sharedaddy block title */
+div.sharedaddy,
+#content div.sharedaddy,
+#main div.sharedaddy {
+	clear: both;
+}
+
+div.sharedaddy h3.sd-title {
+	margin: 0 0 1em 0;
+	display: inline-block;
+	line-height: 1.2;
+	font-size: 9pt;
+	font-weight: bold;
+}
+
+div.sharedaddy h3.sd-title:before {
+	content: "";
+	display: block;
+	width: 100%;
+	min-width: 30px;
+	border-top: 1px solid #ddd;
+	margin-bottom: 1em;
+}
+
+
+/* Toolbar */
+#wpadminbar li#wp-admin-bar-admin-bar-likes-widget {
+	width: 61px;
+	overflow: hidden;
+}
+
+#wpadminbar iframe.admin-bar-likes-widget {
+	width: 61px;
+	height: 28px;
+	min-height: 28px;
+	border-width: 0px;
+	position: absolute;
+	top: 0;
+}
+
+div.jetpack-likes-widget-wrapper {
+	width: 100%;
+	min-height: 50px;	/* Previous height, 60px */
+	position: relative; /* Need to abs position placeholder and iframe so there isn't a jarring jump */
+}
+
+div.jetpack-likes-widget-wrapper .sd-link-color {
+	font-size: 12px;
+}
+
+div.jetpack-likes-widget-wrapper.slim-likes-widget {
+	width: 1px; /* initial default */
+	min-height: 0;
+}
+
+#likes-other-gravatars {
+	display: none;
+	position: absolute;
+	padding: 10px 10px 12px 10px;
+	background-color: #2e4453;
+	border-width: 0;
+	box-shadow: 0 0 10px #2e4453;
+	box-shadow: 0 0 10px rgba(46,68,83,.6);
+	min-width: 130px;
+	z-index: 1000;
+}
+
+#likes-other-gravatars * {
+	line-height: normal;
+}
+
+#likes-other-gravatars .likes-text {
+	color: white;
+	font-size: 12px;
+	padding-bottom: 8px;
+}
+
+#likes-other-gravatars ul,
+#likes-other-gravatars li {
+	margin: 0;
+	padding: 0;
+	text-indent: 0;
+	list-style-type: none;
+}
+
+#likes-other-gravatars li::before {
+	content: "";
+}
+
+#likes-other-gravatars ul.wpl-avatars {
+	overflow: auto;
+	display: block;
+	max-height: 190px;
+}
+
+#likes-other-gravatars ul.wpl-avatars li {
+	width: 32px;
+	height: 32px;
+	float: left;
+	margin: 0 5px 5px 0;
+}
+
+#likes-other-gravatars ul.wpl-avatars li a {
+	margin: 0 2px 0 0;
+	border-bottom: none !important;
+	display: block;
+}
+
+#likes-other-gravatars ul.wpl-avatars li a img {
+	background: none;
+	border: none;
+	margin: 0 !important;
+	padding: 0 !important;
+	position: static;
+}
+
+div.sd-box {
+	border-top: 1px solid #ddd;
+	border-top: 1px solid rgba(0,0,0,.13);
+}
+
+.entry-content .post-likes-widget, .post-likes-widget,
+.comment-likes-widget {
+	margin: 0;
+	border-width: 0;
+	display: block;
+}
+
+
+/* Loading text */
+.post-likes-widget-placeholder {
+	margin: 0;
+	border-width: 0;
+	position: relative;
+}
+
+.post-likes-widget-placeholder .button {
+	display: none;	/* Let's not show a dummy like button, let's just make a great button experience once it's loaded */
+}
+
+.post-likes-widget-placeholder .button span {
+}
+
+.post-likes-widget-placeholder .loading {
+	color: #999;
+	font-size: 12px;
+}
+
+.slim-likes-widget .post-likes-widget {
+	width: auto;
+	float: none;
+}
+
+
+/* Like Special cases (display on it's own) */
+div.sharedaddy.sd-like-enabled .sd-like h3 {
+	display: none;
+}
+
+div.sharedaddy.sd-like-enabled .sd-like .post-likes-widget {
+	width: 100%;
+	float: none;
+	position: absolute; /* Need to abs position placeholder and iframe so there isn't a jarring jump */
+	top: 0;
+}
+
+.comment-likes-widget {
+	width: 100%;
+}
+
+
+/* Make ratings block. @todo: make !important unnecessary by removing inline style */
+.pd-rating {
+	display: block !important;
+}
+
+
+/* Hide G+ title */
+.sd-gplus .sd-title {
+	display: none;
+}
+
+
+#bit, #bit * {
+	*zoom: 1;
+}
+
+#bit {
+	font: normal 13px 'Open Sans', sans-serif;
+	_display: none;
+}
+
+/* @noflip */
+.rtl #bit {
+	font-family: tahoma, Arial, sans-serif;
+}
+
+.loggedout-follow-shelf {
+	position: fixed;
+	right: 40%;
+	z-index: 100;
+	bottom: -330px;
+}
+
+.loggedout-follow-normal {
+	position: fixed;
+	z-index: 100;
+	bottom: -330px;
+	right: 10px;
+}
+
+.loggedout-follow-typekit {
+	margin-right: 4.5em;
+	position: fixed;
+	z-index: 100;
+	bottom: -330px;
+	right: 10px;
+}
+
+#bit a.bsub {
+	display: block;
+	overflow: hidden;
+	padding: 0 10px 0 8px;
+	float: right;
+	text-decoration: none !important;
+	line-height: 28px;
+	font-weight: normal;
+	font-size: 13px;
+	color: #CCC;
+	letter-spacing: normal;
+	border: 0;
+	background-color: #324155;
+	-webkit-box-shadow: 0 -1px 5px rgba(0,0,0,0.20);
+	-moz-box-shadow: 0 -1px 5px rgba(0,0,0,0.20);
+	-o-box-shadow: 0 -1px 5px rgba(0,0,0,0.20);
+	-ms-box-shadow: 0 -1px 5px rgba(0,0,0,0.20);
+	box-shadow: 0 -1px 5px rgba(0,0,0,0.20);
+	outline-style: none;
+	outline-width: 0;
+}
+
+#bit a.bsub {
+	-moz-border-radius: 2px 2px 0 0;
+	-webkit-border-radius: 2px 2px 0 0;
+	-o-border-radius: 2px 2px 0 0;
+	-ms-border-radius: 2px 2px 0 0;
+	border-radius: 2px 2px 0 0;
+}
+
+#bit a.bsub span {
+	padding-right: 6px;
+}
+
+#bit a.bsub span:before{
+	content: '\f801';
+	color: #00AADC;
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font: normal 16px/1 'Noticons';
+	margin: 0 5px 4px 0;
+	vertical-align: middle;
+}
+
+#bit a:hover span, #bit a.bsub.open span {
+	color: #ffffff !important;
+	background-position: left -117px;
+}
+
+#bit a.bsub.open {
+	background: #324155;
+}
+
+#bitsubscribe {
+	background: #324155;
+	color: #fff;
+	padding: 15px;
+	width: 200px;
+	margin-top: 27px;
+	-moz-border-radius: 2px 0 0 0;
+	-webkit-border-radius: 2px 0 0 0;
+	-o-border-radius: 2px 0 0 0;
+	-ms-border-radius: 2px 0 0 0;
+	border-radius: 2px 0 0 0;
+	*float: right;
+	*margin-right: -68px;
+}
+
+div#bitsubscribe.open {
+	-webkit-box-shadow: 0 0 8px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0 0 8px rgba(0,0,0,0.5);
+	-o-box-shadow: 0 0 8px rgba(0,0,0,0.5);
+	-ms-box-shadow: 0 0 8px rgba(0,0,0,0.5);
+	box-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+
+#bitsubscribe div {
+	overflow: hidden;
+}
+
+#bitsubscribe a {
+	color: #d2dee6;
+}
+
+#bit h3, #bit #bitsubscribe h3 {
+	margin: 0 0 .5em 0 !important;
+	font-size: 20px;
+	color: #D2DEE6;
+	text-align: left;
+	font-family: 'Merriweather', serif;
+	font-weight: bold;
+}
+
+#bit h3 label{
+	color: #D2DEE6;
+	font-family: 'Merriweather', serif;
+	font-size: 20px;
+}
+
+#bit #bitsubscribe p {
+	margin: 0 0 1em 0;
+	*margin: 0 0 0 0;
+	font-size: 14px;
+	line-height: 1.45em;
+	font-weight: 300;
+	color: #fff;
+}
+
+#bitsubscribe p a {
+	margin: 20px 0 0;
+	color: #fff;
+	text-decoration: underline;
+}
+
+#bit #bitsubscribe p.bit-follow-count {
+	font-size: 13px;
+	color: #D2DEE6;
+	margin-top: -8px;
+}
+
+#bitsubscribe input[type=submit] {
+  border-style: solid;
+  border-width: 1px 1px 2px;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  margin: 0;
+  outline: 0;
+  overflow: hidden;
+  padding: .75em;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  vertical-align: top;
+  white-space: nowrap;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.8) inset;
+  -moz-box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.8) inset;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.8) inset;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+  -moz-transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+  -o-transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+  background: #00aadc;
+  border-color: #0090bb;
+  border-top-color: #0099c6;
+  border-bottom-color: #0088b0;
+  color: #fff;
+  -webkit-box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.15) inset;
+  -moz-box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.15) inset;
+  box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.15) inset;
+  width:100%;
+  text-shadow: none;
+  font-size: 1em;
+
+}
+
+#bitsubscribe input[type=submit]:hover {
+	background: #33bbe3;
+	border-color: #2b9ec0;
+	border-bottom-color: #2895b5;
+	box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.15) inset;
+}
+
+#bitsubscribe input[type=submit]:active {
+	border-width: 2px 1px 1px;
+}
+
+#bitsubscribe input[type=text],
+#bitsubscribe input[type=email] {
+	background: #f4f8fA;
+	border: 1px solid #d2dee6;
+	border-radius: 0;
+	color: #404040;
+	font-size: 13px;
+	font-weight: 300;
+	height: auto;
+	padding: 5px 6px;
+	width: 100%;
+	box-sizing: border-box;
+	/* @noflip */
+	direction: ltr;
+}
+
+#bitsubscribe input[type=text]:focus,
+#bitsubscribe input[type=email]:focus {
+	border: 1px solid #000;
+}
+
+#bitsubscribe.open {
+	display: block;
+}
+
+#bsub-subscribe-button {
+	text-align: center;
+	margin: 0 auto;
+}
+
+/*
+Confirmation
+=============================== */
+
+
+#bitsubscribe #lof-followpublicize h3 {
+	font-size: 13px;
+	padding-top: 1em;
+	margin-bottom: 1em !important;
+}
+
+#bitsubscribe #lof-followpublicize p.lof-followpublicize-twitter,
+#bitsubscribe #lof-followpublicize p.lof-followpublicize-facebook {
+	overflow: hidden;
+}
+#bitsubscribe #lof-followpublicize p.lof-followpublicize-facebook {
+	border: 1px solid #242f3d;
+}
+
+/*
+Error
+=============================== */
+
+#bit #bitsubscribe p#loggedout-follow-error {
+	background: #E8F0F5;
+	border-left: 3px solid #DD3D36;
+	font-size: 12px;
+	font-weight: 1.4em;
+	padding: 10px;
+	color: #DD3D36;
+}
+
+/*
+Footer
+=============================== */
+
+#bitsubscribe #bsub-credit {
+	text-align: center;
+	font-weight: normal;
+	font-size: 11px;
+	padding: 0 0 7px 0;
+	margin:0 0 -15px;
+	border-top: 1px solid #3c3c3c;
+}
+
+#bitsubscribe #bsub-credit a {
+	color: #90AEC2;
+	background: none;
+	text-decoration: none;
+}
+
+#bitsubscribe #bsub-credit a:hover {
+	color: #78DCFA;
+	background: none;
+}
+
+@media (max-width: 800px) {
+	#bit, #bit a.bsub {
+		display:none;
+	}
+}
+
+@media (min-device-width: 768px) {
+	#bit, #bit a.bsub {
+		display: block;
+	}
+}
+/**
+
+	WordAds V2! This CSS applies to all WordAds and Adsense themes
+
+	HTML markup structure of an ad:
+
+	<div class="wpcnt|mpb">
+	<div class="wpa [wpmrec|wpwidesky|wpleaderboard]">
+
+		<a class="wpa-about" href="http://wordpress.com/about-these-ads/" rel="nofollow">
+		About these ads
+		</a>
+
+		<div class="u">
+		[ad unit here]
+		</div>
+
+	</div>
+	</div>
+
+*/
+
+
+/* outer container */
+.wpcnt {
+	text-align: center;
+	line-height: 0;
+}
+
+.rtl .wpcnt{
+	direction: ltr;
+}
+
+.mpb{
+	text-align: center;
+	margin: 0px auto;
+	width: 100%;
+}
+
+/* inner container */
+.wpa, .wpadvert {				/* @todo: deprecate wpadvert */
+	position: relative;
+    /*overflow: hidden; */       /* this hides "about these ads" when there's no adfill */
+    display: inline-block !important;
+    max-width: 100%; 
+    text-align: left;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.wpa.wpwidesky, .wpa.wpleaderboard{
+	width: auto;
+} 
+
+.wpa.top{
+	min-width: 728px;
+}
+
+.wpa.wpwidesky{
+	min-width: 160px;
+}
+
+.wpa.wpmrec{
+	min-width: 300px;
+}
+
+.mpb .wpa{
+	padding: 10px 0 0;
+}
+
+@media screen and (max-width: 650px) {
+	.mpb .wpa{
+		min-width: 300px;
+	}
+}
+
+/* about these ads */
+/* all the !important use is to ensure consistency */
+.wpa-about{	/* @todo: deprecate wpadvert-about */
+	position: absolute;
+	top: 5px;
+	left: 0;
+	right: 0;
+	display: block;
+	min-width: 160px;
+	/*margin-top: 5px;*/
+	border-bottom: none !important;			/* some themes ad dotted underlines, that won't look nice */
+	font: 10px/1 "Open Sans", Arial, sans-serif !important;
+	text-align: left !important;
+	text-decoration: none !important;
+	opacity: 0.85;
+}
+
+.wpa-about:hover{
+	text-decoration: underline !important;	/* !important necessary, since themes override this routinely */
+	opacity: 1;
+}
+
+/*.wpadvert-about {
+	display: block;
+	padding: 0 1px;
+	font: 9px/1 sans-serif;
+	text-decoration: underline;
+}*/
+
+
+.wpa-about:hover, .wa_infobox a:hover {
+	text-decoration: underline !important;	/* !important necessary, since themes override this routinely */
+	color: #444;							/* !disabling since links must use the theme colors */
+}
+
+.wpa-notice {
+	display: block;
+	position: relative; 
+	padding: 20px;
+	overflow: hidden;
+	border: 5px solid #efefef;
+	font: 10px/1 "Open Sans", Arial, sans-serif !important;
+}
+
+/* dark theme */
+body.highlander-dark .wpa-about {
+	color: #ddd;
+}
+body.highlander-dark .wpa-about:hover {
+	color: #e9e9e9;
+}
+
+/* ad unit wrapper */
+.wpa .u>div, .wpadvert>div>* {	/* @todo: deprecate wpdvert */
+	display: block;
+	margin-top: 5px;			/* this makes "about these ads" visible */
+	margin-bottom: 1em;			/* every ad should have a little space below it */
+}
+
+div.wpa>div {
+	margin-top: 20px;
+}
+
+#google_ads_div_wpcom_below_post_adsafe_ad_container {
+	display: block !important;
+}
+
+.wa-sponsored-link {
+	font: 9px/1 sans-serif;
+}
+/**
+ * Styles for Jetpack related posts
+ */
+
+/* Container */
+
+div#jp-relatedposts {
+	display: none;
+	padding-top: 1em;
+	margin: 1em 0;
+	position: relative;
+}
+
+div.jp-relatedposts:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+/* Headline above related posts section, labeled "Related" */
+
+div#jp-relatedposts h3.jp-relatedposts-headline {
+	margin: 0 0 1em 0;
+	display: inline-block;
+	float: left;
+	font-size: 9pt;
+	font-weight: bold;
+	font-family: inherit;
+}
+
+div#jp-relatedposts h3.jp-relatedposts-headline em:before {
+	content: "";
+	display: block;
+	width: 100%;
+	min-width: 30px;
+	border-top: 1px solid #ddd;
+	border-top: 1px solid rgba(0,0,0,.2);
+	margin-bottom: 1em;
+}
+
+div#jp-relatedposts h3.jp-relatedposts-headline em {
+	font-style: normal;
+	font-weight: bold;
+}
+
+/* Related posts items (wrapping items) */
+
+div#jp-relatedposts div.jp-relatedposts-items {
+	clear: left;
+}
+
+div#jp-relatedposts div.jp-relatedposts-items-visual {
+	margin-right: -20px;
+}
+
+/* Related posts item */
+
+div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post {
+	float: left;
+	width: 33%;
+	margin: 0 0 1em; /* Needs to be same as the main outer wrapper for Related Posts */
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+div#jp-relatedposts div.jp-relatedposts-items-visual .jp-relatedposts-post {
+	padding-right: 20px;
+	/*cursor: pointer;*/
+	filter: alpha(opacity=80);
+	-moz-opacity: .8;
+	opacity: .8;
+}
+
+div#jp-relatedposts div.jp-relatedposts-items div.jp-relatedposts-post:hover .jp-relatedposts-post-title a {
+	text-decoration: underline;
+}
+
+div#jp-relatedposts div.jp-relatedposts-items div.jp-relatedposts-post:hover {
+	filter: alpha(opacity=100);
+	-moz-opacity: 1;
+	opacity: 1;
+}
+
+/* Related posts item content */
+
+div#jp-relatedposts div.jp-relatedposts-items-visual h4.jp-relatedposts-post-title,
+div#jp-relatedposts div.jp-relatedposts-items p {
+	font-size: 14px;
+	line-height: 20px;
+	margin: 0;
+}
+div#jp-relatedposts div.jp-relatedposts-items-visual div.jp-relatedposts-post-nothumbs {
+	position:relative;
+}
+div#jp-relatedposts div.jp-relatedposts-items-visual div.jp-relatedposts-post-nothumbs a.jp-relatedposts-post-aoverlay {
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	display:block;
+}
+
+div#jp-relatedposts div.jp-relatedposts-items p {
+	margin-bottom: 0;
+}
+
+div#jp-relatedposts div.jp-relatedposts-items-visual h4.jp-relatedposts-post-title {
+	text-transform: none;
+	margin: 0;
+	font-family: inherit;
+	display: block;
+	max-width: 100%;
+}
+
+div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a {
+	font-size: inherit;
+	font-weight: normal;
+	text-decoration: none;
+	filter: alpha(opacity=100);
+	-moz-opacity: 1;
+	opacity: 1;
+}
+
+div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a:hover {
+	text-decoration: underline;
+}
+
+div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post img.jp-relatedposts-post-img,
+div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post span {
+	display: block;
+	max-width: 90%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+div#jp-relatedposts div.jp-relatedposts-items-visual .jp-relatedposts-post img.jp-relatedposts-post-img,
+div#jp-relatedposts div.jp-relatedposts-items-visual .jp-relatedposts-post span {
+	max-width: 100%;
+}
+
+div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context {
+	opacity: .6;
+}
+
+/* Behavior when there are thumbnails in visual mode */
+div#jp-relatedposts div.jp-relatedposts-items-visual div.jp-relatedposts-post-thumbs p.jp-relatedposts-post-excerpt {
+	display: none;
+}
+
+/* Behavior when there are no thumbnails in visual mode */
+div#jp-relatedposts div.jp-relatedposts-items-visual div.jp-relatedposts-post-nothumbs p.jp-relatedposts-post-excerpt {
+	overflow: hidden;
+}
+div#jp-relatedposts div.jp-relatedposts-items-visual div.jp-relatedposts-post-nothumbs span {
+	margin-bottom: 1em;
+}
+
+/**
+ * Responsive
+ */
+
+@media only screen and (max-width: 640px) {
+
+	div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post {
+		width: 50%;
+	}
+
+	div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post:nth-child(3n) {
+		clear: left;
+	}
+
+	div#jp-relatedposts div.jp-relatedposts-items-visual {
+		margin-right: 20px;
+	}
+
+}
+
+@media only screen and (max-width: 320px) {
+
+	div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post {
+		width: 100%;
+		clear: both;
+		margin: 0 0 1em;
+	}
+
+}
+/**
+ * Add text colors to the playlist shortcode light color scheme.
+ * 
+ * Core ticket: https://core.trac.wordpress.org/ticket/27562
+ */
+
+.wp-playlist-light {
+	color: #000;
+}
+
+.wp-playlist-light .wp-playlist-item {
+	color: #333;
+}
+
+.wp-playlist-light .wp-playlist-playing {
+	background: #fff;
+	color: #000;
+}
+
+.wp-playlist-dark .wp-playlist-item .wp-playlist-caption {
+	color: #fff;
+}
+
+.wp-playlist-caption {
+	display: block;
+}/**
+ * MP6 hacks, CSS that's either WPCOM specific or otherwise not suitably for MP6 proper
+ */
+
+/* Invert stats sparkline on light theme */
+body.admin-color-mp6-light li#wp-admin-bar-stats img {
+	filter: invert(100%);
+	-webkit-filter: invert(100%);
+}
+
+/* Fix dashicons priority so Japanese users can use the toolbar. Should long term be fixed in whatever plugin that forces all fonts to be Arial */
+i.mce-i-bold, i.mce-i-italic, i.mce-i-bullist, i.mce-i-numlist, i.mce-i-blockquote, i.mce-i-alignleft, i.mce-i-aligncenter, i.mce-i-alignright, i.mce-i-link, i.mce-i-unlink, i.mce-i-wp_more, i.mce-i-strikethrough, i.mce-i-spellchecker, i.mce-i-fullscreen, i.mce-i-wp_fullscreen, i.mce-i-wp_adv, i.mce-i-underline, i.mce-i-alignjustify, i.mce-i-forecolor, i.mce-i-pastetext, i.mce-i-pasteword, i.mce-i-removeformat, i.mce-i-charmap, i.mce-i-outdent, i.mce-i-indent, i.mce-i-undo, i.mce-i-redo, i.mce-i-help, i.mce-i-wp_help, i.mce-i-wp-media-library, i.mce-i-ltr, i.mce-i-wp_page, .mce-close {
+	font: normal 20px/1 'dashicons' !important;
+}
+
+.dashicons, .dashicons-before:before {
+	font-family: 'dashicons' !important;
+}
+
+.noticon {
+	font-family: "Noticons" !important;
+}.bbp-staff-role {
+	color: #f1831e;
+}
+
+.bbp-a8c-reply {
+	background: #e9eff3 !important;
+	border: 1px solid #c8d7e1;
+	width: 98% !important;
+}/*
+Theme Name: Something Fishy
+Theme URI:
+Author: Caroline Moore
+Author URI: http://carolinemoore.net
+Description: An animated undersea theme with a fun, whimsical design.
+Version: 1.1-wpcom
+License: GNU General Public License
+License URI: license.txt
+Text Domain: something-fishy
+Tags: education, cartoon, blog, outdoors, school, bright, colorful, flamboyant, funny, humorous, modern, playful, vibrant, whimsical, custom-colors, flexible-header, full-width-template, infinite-scroll, blue, brown, orange, right-sidebar, two-columns, sticky-post, fixed-layout, featured-images, post-formats, translation-ready, custom-menu, custom-header, rtl-language-support, gray, light, nature, responsive-layout
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
+
+/* =Reset
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+html {
+	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
+	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+body {
+	background: #fff;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+table { /* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+a:focus {
+	outline: thin dotted;
+}
+a:hover,
+a:active { /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+	outline: 0;
+}
+a img {
+	border: 0;
+}
+
+
+/* =Global
+----------------------------------------------- */
+
+body {
+	width: 100%;
+}
+body,
+button {
+	background: #d8eeed;
+	color: #555;
+	font-family: "Port Lligat Sans", Helvetica, sans-serif;
+	font-size: 16px;
+	font-size: 1.6rem;
+	line-height: 1.6;
+}
+textarea,
+input {
+	background: rgba(255,255,255,.6);
+	border: 0 none;
+	color: #555;
+	font-family: "Port Lligat Sans", Helvetica, sans-serif;
+	font-size: 16px;
+	font-size: 1.6rem;
+	line-height: 1.6;
+}
+select {
+	background: rgba(255,255,255,.6);
+	color: #555;
+	font-family: "Port Lligat Sans", Helvetica, sans-serif;
+	font-size: 16px;
+	font-size: 1.6rem;
+	line-height: 1.6;
+}
+
+/* Headings */
+h1,h2,h3,h4,h5,h6 {
+	clear: both;
+	color: #777;
+	margin: 0 0 .8em;
+}
+h1 {
+	color: #39aca0;
+	font-family: Pacifico, script;
+	font-size: 36.651px;
+	font-size: 3.6651rem;
+	line-height: .698em;
+	margin: .698em 0;
+}
+h2 {
+	color: #f38533;
+	font-family: Oswald, sans-serif;
+	font-size: 25.88px;
+	font-size: 2.588rem;
+	line-height: .989em;
+	margin: .989em 0;
+	text-transform: uppercase;
+}
+h3 {
+	font-family: Oswald, sans-serif;
+	font-size: 22.652px;
+	font-size: 2.2652rem;
+	font-weight: normal;
+	line-height: 1.13em;
+	margin: 1.13em 0;
+}
+h4 {
+	font-family: "Port Lligat Sans", Helvetica, sans-serif;
+	font-size: 22.652px;
+	font-size: 2.2652rem;
+	font-weight: 700;
+	line-height: 1.13em;
+	margin: 1.13em 0;
+}
+h5 {
+	font-family: "Port Lligat Sans", Helvetica, sans-serif;
+	font-size: 16px;
+	font-size: 1.6rem;
+	font-weight: 700;
+	line-height: 1em;
+	margin: 1em 0;
+}
+h6 {
+	font-family: "Port Lligat Sans", Helvetica, sans-serif;
+	font-size: 14px;
+	font-size: 1.4rem;
+	font-weight: 700;
+	line-height: 1.828em;
+	margin: 1.828em 0;
+}
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.6em;
+}
+
+/* Text elements */
+p {
+	margin: .8em 0;
+}
+ul, ol {
+	margin: 0 0 1.6em 3.2em;
+}
+ul {
+	list-style: disc;
+}
+ol {
+	list-style: decimal;
+}
+ul ul, ol ol, ul ol, ol ul {
+	margin-bottom: 0;
+	margin-left: 1.6em;
+}
+dt {
+	font-weight: bold;
+}
+dd {
+	margin: 0 1.6em 1.6em;
+}
+b, strong {
+	font-weight: bold;
+}
+dfn, cite, em, i {
+	font-style: italic;
+}
+blockquote {
+	margin: 0 0 0 1.6em;
+	padding: .8em 0 .8em 1.6em;
+	position: relative;
+	z-index: 1;
+}
+blockquote:before {
+	color: rgba(99,200,189,.5);
+	content: " “ ";
+	float: left;
+	font-size: 109px;
+	font-size: 10.9rem;
+	line-height: 16px;
+	line-height: 1.6rem;
+	margin: 45px 0 0 0;
+	padding: 0;
+	position: absolute;
+		top: 0;
+		left: -30px;
+	z-index: 0;
+}
+address {
+	font-style: italic;
+	margin: 0 0 1.6em;
+}
+pre {
+	background: rgba(119,119,119,.1);
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 14px;
+	font-size: 1.4rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	padding: 1.6em;
+	overflow: auto;
+	max-width: 100%;
+}
+code, kbd, tt, var {
+	font: 14px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+mark, ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup {
+	bottom: 1ex;
+}
+sub {
+	top: .5ex;
+}
+small {
+	font-size: 75%;
+}
+big {
+	font-size: 125%;
+}
+figure {
+	margin: 0;
+}
+table {
+	margin: 0 0 1.6em 0;
+	padding: 0;
+	border-collapse: collapse;
+	width: 100%;
+}
+tr,
+td,
+th {
+	vertical-align: top;
+	padding: .4em .8em;
+	margin: 0;
+	border: 0 none;
+}
+td {
+	border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+tr.alternate {
+	background-color: rgba(119,119,119,.05);
+}
+th {
+	background-color: #f38533;
+	color: #fff;
+	text-align: left;
+	font-family: Oswald, Helvetica, sans-serif;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+button,
+input,
+select,
+textarea {
+	font-size: 100%; /* Corrects font size not being inherited in all browsers */
+	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+	*vertical-align: middle; /* Improves appearance and consistency in all browsers */
+}
+button,
+input {
+	line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+	*overflow: visible;  /* Corrects inner spacing displayed oddly in IE6/7 */
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid #ccc;
+	border-color: #ccc #ccc #bbb #ccc;
+	border-radius: 20px;
+	background: #fafafa; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fafafa 60%, #e6e6e6 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(60%,#fafafa), color-stop(100%,#e6e6e6)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #fafafa 60%,#e6e6e6 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #fafafa 60%,#e6e6e6 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #fafafa 60%,#e6e6e6 100%); /* IE10+ */
+	background: linear-gradient(top,  #fafafa 60%,#e6e6e6 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#e6e6e6',GradientType=0 ); /* IE6-9 */
+	box-shadow: inset 0 2px 1px #fff;
+	color: rgba(0,0,0,.8);
+	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
+	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
+	font-size: 12px;
+	font-size: 1.2rem;
+	padding: .5em 1em;
+	text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+button:hover,
+html input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	background: #f5f5f5; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f5f5f5 60%, #dcdcdc 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(60%,#f5f5f5), color-stop(100%,#dcdcdc)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f5f5f5 60%,#dcdcdc 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f5f5f5 60%,#dcdcdc 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f5f5f5 60%,#dcdcdc 100%); /* IE10+ */
+	background: linear-gradient(top,  #f5f5f5 60%,#dcdcdc 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#dcdcdc',GradientType=0 ); /* IE6-9 */
+	border-color: #bbb #bbb #aaa #bbb;
+}
+button:focus,
+html input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+button:active,
+html input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+	border-color: #aaa #bbb #bbb #bbb;
+	box-shadow: inset 0 2px 3px rgba(0,0,0,.15);
+	box-shadow: inset 0 2px 2px rgba(0,0,0,.15);
+}
+input[type="checkbox"],
+input[type="radio"] {
+	border-radius: 20px;
+	box-sizing: border-box; /* Addresses box sizing set to content-box in IE8/9 */
+	padding: 0; /* Addresses excess padding in IE8/9 */
+}
+input[type="search"] {
+	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+	box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+	-webkit-appearance: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+	border: 0;
+	padding: 0;
+}
+input[type=text],
+input[type=email],
+textarea {
+	border: 1px solid #ccc;
+	color: #666;
+}
+input[type=text]:focus,
+input[type=email]:focus,
+textarea:focus {
+	color: #111;
+}
+input[type=text],
+input[type=email] {
+	padding: 3px;
+}
+textarea {
+	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+	padding: 10px;
+	vertical-align: top; /* Improves readability and alignment in all browsers */
+	width: 98%;
+}
+#s {
+	padding: 6px;
+	width: 120px;
+	max-width: 75%;
+}
+
+/* Links */
+a {
+	color: #39aca0;
+	text-decoration: none;
+	transition: .3s ease-in-out;
+	-webkit-transition: .3s ease-in-out;
+	-moz-transition: .3s ease-in-out;
+	-o-transition: .3s ease-in-out;
+}
+a:visited {
+	color: #39aca0;
+}
+a:hover,
+a:focus,
+a:active {
+	color: #f38533;
+	transition: .3s ease-in-out;
+	-webkit-transition: .3s ease-in-out;
+	-moz-transition: .3s ease-in-out;
+	-o-transition: .3s ease-in-out;
+}
+
+/* Alignment */
+.alignleft {
+	display: inline;
+	float: left;
+	margin: .8em 1.6em .8em 0;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin: .8em 0 .8em 1.6em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: .8em auto;
+}
+.alignnone {
+	margin: .8em 0;
+}
+
+/* Text meant only for screen readers */
+.assistive-text {
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+
+/* =Menu
+----------------------------------------------- */
+
+.main-navigation {
+	background: rgba(57,172,160,.5);
+	border-radius: 2px;
+	display: block;
+	float: right;
+	font-size: 16px;
+	font-size: 1.6rem;
+	margin: 0 0 1.6em 0;
+	min-height: 38px;
+	padding: 0;
+	position: relative;
+	text-align: left;
+	width: 100%;
+}
+.main-navigation .menu {
+	display: block;
+	float: right;
+	margin: 0 9px 0;
+	position: relative;
+	max-width: 53%;
+}
+.main-navigation ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.main-navigation ul li {
+	display: block;
+	float: right;
+	font-family: Oswald, Helvetica, sans-serif;
+	margin: 0;
+	position: relative;
+	text-transform: uppercase;
+	word-wrap: break-word;
+}
+.main-navigation ul li > ul {
+	margin-bottom: 2px;
+}
+.main-navigation ul li ul li ul {
+	margin-bottom: -1px;
+}
+.main-navigation li a:link,
+.main-navigation li a:visited,
+.main-navigation li a:hover,
+.main-navigation li a:active {
+	color: #fff;
+	display: block;
+	height: auto;
+	padding: .4em 15px;
+	transition: 0s;
+	-webkit-transition: 0s;
+	-moz-transition: 0s;
+	word-wrap: break-word;
+}
+.main-navigation ul,
+.main-navigation ul ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.main-navigation ul {
+	position: relative;
+	z-index: 597;
+}
+.main-navigation ul li {
+	vertical-align: middle;
+	zoom: 1;
+}
+.main-navigation ul li.hover,
+.main-navigation ul li:hover {
+	position: relative;
+	z-index: 599;
+	cursor: default;
+}
+.main-navigation ul li > ul {
+	opacity:0;
+	transition: opacity .3s ease-in-out;
+	-webkit-transition: opacity .3s ease-in-out;
+	-moz-transition: opacity .3s ease-in-out;
+	-o-transition: opacity .3s ease-in-out;
+	visibility:hidden;
+}
+.main-navigation ul li:hover > ul {
+	opacity:1;
+	visibility: visible;
+}
+.main-navigation ul ul li > ul {
+	opacity:0;
+	transition: opacity .3s ease-in-out, width .3s ease-in-out;
+	-webkit-transition: opacity .3s ease-in-out, width .3s ease-in-out;
+	-moz-transition: opacity .3s ease-in-out, width .3s ease-in-out;
+	-o-transition: opacity .3s ease-in-out, width .3s ease-in-out;
+	visibility:hidden;
+	width: 0;
+}
+.main-navigation ul ul li:hover > ul {
+	opacity:1;
+	visibility: visible;
+	width: 150px;
+}
+.main-navigation ul ul {
+	position: absolute;
+		top: 100%;
+		left: 0;
+	visibility: hidden;
+	z-index: 598;
+}
+.main-navigation ul ul li,
+.main-navigation ul ul ul li {
+	background: transparent;
+	 float: left;
+	 margin: 0;
+	 position: relative;
+	 width: 150px;
+	 word-wrap: break-word;
+}
+.main-navigation ul ul ul {
+	top: 0;
+	bottom: 1px;
+	left: 99%;
+}
+.main-navigation ul ul {
+	background: rgba(57,172,160,.7);
+ 	bottom: auto !important;
+ 	top: 100%;
+}
+.main-navigation li.current-menu-item,
+.main-navigation li.current_page_item {
+	background: #f38533;
+}
+.main-navigation ul ul li.current-menu-item,
+.main-navigation ul ul li.current_page_item {
+	transition: opacity .3s ease-in-out, width .3s ease-in-out;
+	-webkit-transition: opacity .3s ease-in-out, width .3s ease-in-out;
+	-moz-transition: opacity .3s ease-in-out, width .3s ease-in-out;
+	-o-transition: opacity .3s ease-in-out, width .3s ease-in-out;
+}
+
+
+/* Small menu */
+.menu-toggle {
+	cursor: pointer;
+}
+.main-small-navigation .menu {
+	display: none;
+}
+h1.menu-toggle {
+	background-color: rgba(57,172,160,.5);
+	color: #fff;
+	display: block;
+	font-family: Oswald, Helvetica, sans-serif;
+	font-size: 28px;
+	font-size: 2.8rem;
+	line-height: 1.2em;
+	margin: 0 auto;
+	padding: 10px 0;
+	position: relative;
+	text-align: center;
+	width: 100%;
+	height: 35px;
+	z-index: 20;
+}
+.main-small-navigation .menu {
+	background: rgba(255,255,255,.8);
+	display: block;
+	list-style: none;
+	margin: 0 auto 1.6em auto;
+	padding: 1em 10%;
+	position: relative;
+	text-align: left;
+	width: 80%;
+	z-index: 10;
+}
+.main-small-navigation .menu li {
+	display: block;
+	clear: both;
+	color: rgba(57,172,160,1.0);
+}
+
+
+/* =Content
+----------------------------------------------- */
+
+.sticky {
+}
+.hentry {
+	background-color: rgba(255,255,255,.6);
+	margin: 0 0 3.2em;
+	padding: 1.6em;
+	position: relative;
+	z-index: 50;
+}
+.byline {
+	display: none;
+}
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+.entry-header {
+	margin: 0 0 1.6em 0;
+}
+.entry-content,
+.entry-summary {
+	margin: 0 0 1.6em;
+}
+.page-links {
+	clear: both;
+	text-transform: uppercase;
+	margin: .8em 0;
+}
+.page-links span.active-link {
+	background-color: rgba(57,172,160,.5);
+	border-radius: 15px;
+	color: #fff;
+	display: inline-block;
+	font-family: Oswald, Helvetica, sans-serif;
+	font-size: 13px;
+	font-size: 1.3rem;
+	margin: 0 0 3px;
+	padding: 3px;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	transition: .3s ease-in-out;
+	-webkit-transition: .3s ease-in-out;
+	-moz-transition: .3s ease-in-out;
+	-o-transition: .3s ease-in-out;
+	font-weight: bold;
+}
+.page-links a span.active-link {
+	background-color: rgba(57,172,160,1.0);
+	border-radius: 15px;
+	color: #fff;
+	display: inline-block;
+	font-family: Oswald, Helvetica, sans-serif;
+	font-size: 13px;
+	font-size: 1.3rem;
+	margin: 0 0 3px;
+	padding: 3px;
+	text-align: center;
+	width: 20px;
+	height: 20px;
+}
+.page-links a:hover span.active-link {
+	background-color: rgba(57,172,160,.5);
+	color: #fff;
+	transition: .3s ease-in-out;
+	-webkit-transition: .3s ease-in-out;
+	-moz-transition: .3s ease-in-out;
+	-o-transition: .3s ease-in-out;
+}
+h1.page-title {
+	background-color: #f38533;
+	color: #fff;
+	font-family: Oswald, Helvetica, sans-serif;
+	font-size: 16px;
+	font-size: 1.6rem;
+	margin: 0 0 1.6em 0;
+	padding: .8em 1.6em;
+}
+h1.page-title a {
+	color: #fff;
+}
+.author-archives-header,
+.taxonomy-description {
+	background-color: rgba(255,255,255, .5);
+	display: block;
+	margin: -1.6em 0 1.6em 0;
+	min-height: 66px;
+	padding: .8em 1.6em;
+	vertical-align: middle;
+}
+.author-archives-header:before,
+.author-archives-header:after {
+	content: "";
+	display: table;
+}
+.author-archives-header:after {
+	clear: both;
+}
+.author-archives-img {
+	float: left;
+	width: 100px;
+}
+.author-info {
+	float: right;
+	margin: 0 0 0 -100px;
+	width: 100%;
+}
+.author-archives-name,
+.author-archives-url,
+.author-archives-bio {
+	clear: both;
+	display: block;
+	margin: 0 0 0 100px;
+}
+
+
+/* =Post Formats
+----------------------------------------------- */
+
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title,
+.blog .format-status .entry-title,
+.archive .format-status .entry-title,
+.blog .format-status footer.entry-meta,
+.archive .format-status footer.entry-meta {
+	display: none;
+}
+.format-status .entry-content {
+	margin: 0;
+}
+.status-entry-meta {
+	color: #39aca0;
+	font-family: Oswald, Helvetica, sans-serif;
+	font-size: 12px;
+	font-size: 1.2rem;
+	font-weight: 700;
+	display: inline-block;
+	margin: 0 10px 0 0;
+	text-transform: uppercase;
+}
+
+
+/* =Media
+----------------------------------------------- */
+
+.site-header img {
+	display: block;
+	margin: 0 auto 1.6em;
+	max-width: 100%;
+}
+.entry-content img,
+.comment-content img {
+	background-color: rgba(255,255,255,.7);
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	max-width: 99%; /* Fluid images for posts, comments, and widgets */
+	padding: 5px;
+}
+.entry-content img.latex {
+	background-color: transparent;
+}
+.widget img {
+	max-width: 100%; /* Fluid images for posts, comments, and widgets */
+}
+.site-header img,
+.entry-content img,
+img[class*="align"],
+img[class*="wp-image-"] {
+	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+}
+.entry-content img,
+img.size-full {
+	max-width: 98%;
+}
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+	border: none;
+	display: inline;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+.featured-image {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	max-height: 250px;
+	overflow: hidden;
+}
+.featured-image img {
+	margin: 0;
+	padding: 0;
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+}
+.wp-caption {
+	background-color: rgba(255,255,255,.7);
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	max-width: 99.6%;
+}
+.widget .wp-caption {
+	background: transparent;
+	border: 0 none;
+}
+.wp-caption.aligncenter {
+	margin: .8em auto;
+}
+.wp-caption.alignleft {
+	margin: .8em 1.6em .8em 0;
+}
+.wp-caption.alignright {
+	margin: .8em 0 .8em 1.6em;
+}
+.wp-caption img {
+	border: 0 none;
+	display: block;
+	margin: auto;
+	max-width: 98%;
+}
+.widget .wp-caption img {
+	max-width: 100%;
+}
+.wp-caption-text {
+	color: #666;
+	font-size: 14px;
+	font-size: 1.4rem;
+	font-style: italic;
+	font-weight: normal;
+	line-height: 1.6rem;
+	margin: 0 5px 5px;
+	text-align: center;
+}
+.footer-sidebars .wp-caption-text {
+	color: rgba(255,255,255,.6);
+}
+#content .gallery {
+	margin-bottom: 1.6em;
+}
+.gallery-caption {
+}
+#content .gallery a img {
+	border: none;
+	height: auto;
+	max-width: 90%;
+}
+#content .gallery dd {
+	margin: 0;
+}
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/* VideoPress */
+.video-player,
+.videopress-placeholder {
+	height: auto !important;
+	max-width: 100%;
+}
+.videopress-placeholder {
+	background: transparent !important;
+}
+.entry-content .videopress-poster {
+	border-radius: 0;
+}
+
+
+/* =Navigation
+----------------------------------------------- */
+
+#content .site-navigation {
+	margin: 0 1.6em 1.6em 1.6em;
+	overflow: hidden;
+}
+#content .nav-previous {
+	float: left;
+	width: 50%;
+}
+#content .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+#content #comment-nav-below {
+	display: inline-block;
+	margin: .8em 0;
+	width: 100%;
+}
+
+/* =Comments
+----------------------------------------------- */
+
+.bypostauthor {
+}
+.form-allowed-tags,
+.form-allowed-tags code {
+	color: rgba(0,0,0,.2);
+	font-size: 12px;
+	font-size: 1.2rem;
+}
+#comments-title {
+	margin: 0 0 1.6em;
+}
+#commentform .comment-form-author,
+#commentform .comment-form-email,
+#commentform .comment-form-url,
+#commentform .comment-form-comment {
+	color: rgba(57,172,160,1.0);
+	display: block;
+	font-family: Oswald, Helvetica, sans-serif;
+	font-weight: normal;
+	padding: 5px 15px;
+	text-transform: uppercase;
+}
+#commentform .comment-form-author,
+#commentform .comment-form-email,
+#commentform .comment-form-url {
+	width: 330px;
+}
+#commentform .comment-form-comment #comment {
+	margin: .8em 0;
+}
+#commentform .comment-notes .required {
+	display: inline;
+	float: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+		left: auto;
+}
+#commentform .comment-form-author label,
+#commentform .comment-form-email label,
+#commentform .comment-form-url label {
+	display: block;
+	float: left;
+	width: 100px;
+}
+#respond {
+	padding: 1.6em;
+}
+li.comment {
+	min-height: 100px;
+}
+li.comment,
+li.pingback,
+li.trackback {
+	border-bottom: 1px solid rgba(119,119,119,.2);
+	padding: 1.6em;
+	clear: both;
+}
+li.pingback,
+li.trackback {
+	background-repeat: no-repeat;
+	background-color: rgba(119,119,119,.03);
+}
+li.pingback p,
+li.trackback p {
+	clear: both;
+	border: 0 none;
+	min-height: 25px;
+	word-wrap: break-word;
+	margin: 0;
+}
+ol.commentlist,
+ul.commentlist {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+ol.commentlist blockquote,
+ul.commentlist blockquote {
+	background-color: transparent;
+}
+ol.commentlist ul.children,
+ul.commentlist ul.children {
+	list-style: none;
+	margin: 0;
+}
+ol.commentlist ul.children li,
+ul.commentlist ul.children li {
+	list-style: none;
+	border-bottom: 0 none;
+}
+ul.children {
+	padding: 0;
+}
+ul.children .comment-author {
+	float: none;
+	width: auto;
+	border-right: 0 none;
+	margin: 0;
+	min-height: 0;
+	clear: left;
+}
+.comment-author cite.fn,
+.comment-author cite.fn a {
+	font-family: Oswald, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+ul.children .comment-author cite.fn {
+	width: auto;
+	float: none;
+}
+ul.children .comment-content,
+ul.children .comment-content .comment-meta,
+ul.children .reply {
+	padding-left: 0;
+}
+.alt {
+	background-color: rgba(119,119,119,.03);
+}
+.avatar {
+	border-radius: 80px;
+}
+.commentlist .avatar {
+	display: block;
+	margin: 0 auto;
+	position: relative;
+		top: 3px;
+}
+.comment-author-avatar {
+	background: #fff;
+	border-radius: 50px;
+	display: block;
+	float: left;
+	margin-right: 10px;
+	overflow: hidden;
+	width: 46px;
+	height: 46px;
+}
+.bypostauthor {
+	background-color: rgba(119,119,119,.05);
+}
+.comment-content,
+.comment-content .comment-meta,
+.reply {
+	padding-left: 211px;
+}
+.comment-author {
+	width: 190px;
+	float: left;
+	border-right: 1px solid rgba(119,119,119,.2);
+	margin-right: 20px;
+	min-height: 100px;
+}
+.comment-author cite.fn {
+	word-wrap: break-word;
+	width: 130px;
+	display: block;
+	float: left;
+}
+.comment-form-comment label {
+	display: block;
+	width: 85px;
+	float: left;
+}
+.commentmetadata {
+	text-transform: uppercase;
+	color: #666;
+	margin-bottom: 5px;
+}
+.nocomments {
+	margin-bottom: 0;
+	padding: 20px;
+	text-align: center;
+}
+.says {
+	display: none;
+}
+#cancel-comment-reply-link {
+	float: right;
+}
+h2.comments-title {
+	line-height: 36px;
+	padding: 0 0 0 1em;
+}
+
+
+/* =Widgets
+----------------------------------------------- */
+
+.widget {
+	background-color: rgba(255,255,255,.5);
+	border-radius: 2px;
+	font-size: 14px;
+	font-size: 1.4rem;
+	line-height: 1.828em;
+	margin: 0 0 1.828em;
+	padding: 1.6em;
+	word-wrap: break-word;
+}
+.footer-sidebars .widget {
+	background: transparent;
+	color: rgba(255,255,255,.6);
+}
+.footer-sidebars .widget-title {
+	color: #775955;
+}
+.footer-sidebars .widget ul li {
+	border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.widget img {
+	background: transparent;
+	border: 0 none;
+	height: auto;
+}
+.widget-title {
+	color: #777;
+	font-family: Oswald, sans-serif;
+	font-size: 16px;
+	font-size: 1.6rem;
+	line-height: 1em;
+	margin: 0 0 .8em 0;
+	padding: 0;
+	text-transform: uppercase;
+}
+.widget-title a {
+	color: #777;
+}
+.widget ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.widget ul ul {
+	padding: 0 0 0 10px;
+}
+.widget ul li {
+	border-bottom: 1px solid rgba(119,119,119,.1);
+	padding: .45em 0;
+	line-height: 1.828em;
+	list-style: none;
+	margin: 0;
+}
+.widget ul li:last-of-type {
+	border: 0 none;
+	padding-bottom: 0;
+}
+#wp-calendar td,
+#wp-calendar th {
+	padding: 2px;
+	text-align: center;
+}
+#wp-calendar caption {
+	font-weight: bold;
+	text-align: center;
+}
+#searchsubmit {
+	padding: .5em;
+}
+
+
+/* =Layout
+----------------------------------------------- */
+
+.site-content {
+	float: left;
+	margin: 0 -25% 0 0;
+	width: 100%;
+}
+#content {
+	margin: 0 25% 0 0;
+}
+#secondary { /* Sidebar 1 */
+	float: right;
+	overflow: hidden;
+	width: 22%;
+}
+.footer-sidebars-wrapper {
+	background: #3a211e;
+	color: #fff;
+	display: inline-block;
+	margin: 0;
+	position: absolute;
+		top: 100%;
+	width: 100%;
+}
+.footer-sidebars {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+	width: 1000px;
+}
+#footer-1,
+#footer-2,
+#footer-3 { /* Footer sidebars */
+	float: left;
+	width: 32%;
+}
+#footer-1 {
+	margin: 0 2% 0 0;
+}
+#footer-2 {
+	margin: 0 2% 0 0;
+}
+.page-template-nosidebar-page-php #content {
+	margin: 0;
+}
+.site-footer {
+	clear: both;
+	width: 100%;
+}
+/*.site-title:before {
+	background-image: url(/wp-content/themes/pub/something-fishy/img/default.png);
+	background-repeat: no-repeat;
+	background-position: 0 -7px;
+	background-size: 85px;
+	content: " ";
+	display: block;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+		top: 0;
+		left: 0;
+	width: 100px;
+	height: 65px;
+}*/
+.site-title,
+.site-title a {
+	font-family: Pacifico, script;
+	font-size: 59.301px;
+	font-size: 5.9301rem;
+	line-height: 75px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	text-decoration: none;
+	z-index: 20;
+}
+.site-title a:hover {
+	color: #39aca0;
+}
+.site-description {
+	color: #fff;
+	float: left;
+	font-family: "Port Lligat Sans", Helvetica, sans-serif;
+	font-size: 19px;
+	font-size: 1.9rem;
+	margin: .4em 0 .4em 1.6em;
+	max-width: 45%;
+	position: relative;
+	text-transform: none;
+	z-index: 20;
+}
+.entry-title,
+.entry-title a {
+	color: #f38533;
+	font-family: Oswald, sans-serif;
+	font-size: 26px;
+	font-size: 2.6rem;
+	line-height: 36px;
+	margin: 0 0 .25em;
+	padding: 0;
+	text-transform: uppercase;
+}
+.hentry {
+	border-radius: 2px;
+	zoom: 1;
+}
+.hentry:before,
+.hentry:after {
+	content: "";
+	display: table;
+}
+.hentry:after {
+	clear: both;
+}
+.hentry:before {
+	background-color: #39aca0;
+	border-radius: 50px 0 0 50px;
+	content: "";
+	display: block;
+	width: 36.6px;
+	height: 67.7px;
+	margin: -5px 0 0 0;
+	position: absolute;
+		left: -36.6px;
+	z-index: 5;
+}
+.sticky.hentry:before {
+	background-color: #f38533;
+}
+.entry-meta {
+	color: #777;
+	font-family: Oswald, Helvetica, sans-serif;
+	font-size: 11px;
+	font-size: 1.1rem;
+	text-transform: uppercase;
+}
+.image-attachment .entry-attachment {
+	text-align: center;
+}
+.image-attachment .entry-meta {
+	background-color: rgba(255, 255, 255, .5);
+	border-radius: 2px;
+	display: block;
+	float: right;
+	font-family: "Port Lligat Sans", Helvetica, sans-serif;
+	font-size: 14px;
+	font-size: 1.4rem;
+	margin: 0 0 1.828em;
+	padding: 1.6em;
+	position: absolute;
+		top: 0;
+		left: 780px;
+	text-transform: none;
+	width: 23.4%;
+}
+#image-navigation {
+	margin: .8em 0 0;
+}
+#image-navigation .previous-image a,
+#image-navigation .next-image a,
+#image-navigation .previous-image-thumb img,
+#image-navigation .next-image-thumb img {
+	background: rgba(57,172,160,1.0);
+	border-radius: 50px;
+	clear: none;
+	color: #fff;
+	display: block;
+	font-size: 40px;
+	line-height: .9em;
+	text-align: center;
+	width: 40px;
+	height: 40px;
+}
+#image-navigation .previous-image a:hover,
+#image-navigation .next-image a:hover,
+#image-navigation .previous-image-thumb img:hover,
+#image-navigation .next-image-thumb img:hover {
+	opacity: 1.0;
+}
+#image-navigation .previous-image a,
+#image-navigation .previous-image-thumb img {
+	float: left;
+	opacity: .7;
+	transition: .3s ease-in-out;
+	-webkit-transition: .3s ease-in-out;
+	-moz-transition: .3s ease-in-out;
+	-o-transition: .3s ease-in-out;
+}
+#image-navigation .next-image a,
+#image-navigation .next-image-thumb img {
+	float: right;
+	opacity: .7;
+	transition: .3s ease-in-out;
+	-webkit-transition: .3s ease-in-out;
+	-moz-transition: .3s ease-in-out;
+	-o-transition: .3s ease-in-out;
+}
+#image-navigation .previous-image a {
+	margin: 0 5px 0 0;
+}
+#image-navigation .next-image a {
+	margin: 0 0 0 5px;
+}
+.tags-links,
+.cat-links {
+	clear: both;
+	display: inline;
+}
+.tags-links a {
+	background-color: rgba(243,133,31,1.0);
+	border-radius: 2px;
+	color: #fff;
+	display: inline-block;
+	margin: 0 5px .4em 0;
+	padding: 1px 3px;
+}
+.tags-links a:hover {
+	background-color: #f5a061;
+}
+.cat-links a {
+	background-color: rgba(57,172,160,1.0);
+	border-radius: 2px;
+	color: #fff;
+	display: inline-block;
+	margin: 0 3px .4em 0;
+	padding: 1px 3px;
+}
+.cat-links a:hover {
+	background-color: #63c8bd;
+}
+.comments-link a,
+.edit-link a {
+	background-color: #777;
+	border-radius: 2px;
+	color: #fff;
+	display: inline-block;
+	font-family: Oswald, Helvetica, sans-serif;
+	font-size: 11px;
+	font-size: 1.1rem;
+	text-transform: uppercase;
+	margin: 0 3px .4em 0;
+	padding: 1px 3px;
+}
+.comments-link a:hover,
+.edit-link a:hover {
+	background-color: #999;
+}
+#page {
+	background-image: linear-gradient(top, rgb(225,237,236) 27%, rgb(192,237,234) 100%);
+	background-image: -o-linear-gradient(top, rgb(225,237,236) 27%, rgb(192,237,234) 100%);
+	background-image: -moz-linear-gradient(top, rgb(225,237,236) 27%, rgb(192,237,234) 100%);
+	background-image: -webkit-linear-gradient(top, rgb(225,237,236) 27%, rgb(192,237,234) 100%);
+	background-image: -ms-linear-gradient(top, rgb(225,237,236) 27%, rgb(192,237,234) 100%);
+	width: 100%;
+	min-height: 100%;
+	position: absolute;
+}
+#main {
+	margin: 0 auto;
+	position: relative;
+	width: 1000px;
+	min-height: 600px;
+	z-index: 40;
+}
+#masthead {
+	margin: 0 auto;
+	padding: 3.2em 0 .8em 0;
+	position: relative;
+	width: 1000px;
+	z-index: 50;
+}
+/*#masthead hgroup:before {
+	background-image: url(/wp-content/themes/pub/something-fishy/img/sprite.png);
+	background-repeat: no-repeat;
+	background-position: -90px -14px;
+	background-size: 700px;
+	content: " ";
+	display: block;
+	margin: 3em 0 0;
+	position: absolute;
+		top: 0;
+		right: 0;
+	width: 100px;
+	height: 100px;
+}*/
+#masthead hgroup {
+	display: inline-block;
+	margin: 0 auto;
+	max-width: 100%;
+	padding: 0;
+	position: relative;
+	z-index: 20;
+}
+.footer-wrapper {
+	margin: 0 0 0 -600px;
+	position: absolute;
+		bottom: 0;
+		left: 50%;
+	width: 1200px;
+}
+.reeds-wrapper {
+	position: absolute;
+		bottom: 0;
+		left: 0;
+	width: 100%;
+	height: 400px;
+	z-index: 20;
+}
+#colophon {
+	background: #3a211e;
+	clear: both;
+	color: rgba(255,255,255,.3);
+	display: block;
+	font-family: Oswald, Helvetica, sans-serif;
+	font-size: 12px;
+	font-size: 1.2rem;
+	margin: 0;
+	padding: 1.6em 0;
+	position: absolute;
+		top: 100%;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+	z-index: 20;
+}
+#ocean-floor-background-2 {
+	background-image: url(/wp-content/themes/pub/something-fishy/img/ground.png);
+	background-position: left top;
+	background-repeat: repeat-x;
+	margin: -50px auto 0 auto;
+	height: 113px;
+	position: relative;
+		bottom: 0;
+	width: 100%;
+	z-index: 6;
+}
+#ocean-floor-background {
+	background-image: url(/wp-content/themes/pub/something-fishy/img/ground2.png);
+	background-repeat: repeat-x;
+	background-position: left top;
+	clear: both;
+	content: "";
+	display: block;
+	height: 100px;
+	margin: 0 auto;
+	padding: 0;
+	position: relative;
+	width: 100%;
+	z-index: 1;
+}
+.site-info {
+	text-align: center;
+	width: 100%;
+	z-index: 10;
+}
+
+
+/* =Jetpack Infinite Scroll
+----------------------------------------------- */
+
+/**
+ * Globally hidden elements when IS is supported and in use.
+ */
+.infinite-scroll #nav-above, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll #nav-below,
+.infinite-scroll.neverending #colophon .site-info { /* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/**
+ * When IS has reached its end we need to re-display elements that were hidden (via .neverending) before
+ */
+.infinity-end.neverending #colophon .site-info {
+	display: block;
+}
+
+/**
+ * Global style tweaks when IS is supported and in use
+ */
+.infinite-scroll .infinite-wrap, /* Each IS loop content wrapper (multiple instances) */
+.infinite-scroll .infinite-loader, /* Each IS loading spinner (multiple instances) */
+.infinite-scroll #infinite-handle /* The Load more posts button */ {
+	clear: both;
+}
+.infinite-scroll .infinite-wrap {
+	border-top: none;
+	padding: 0;
+}
+#infinite-footer .blog-info a,
+#infinite-footer .blog-credits a,
+#infinite-footer .blog-credits,
+#infinite-handle span,
+#infinite-handle span:before {
+	color: #fff;
+}
+#infinite-footer .blog-info a:hover,
+#infinite-footer .blog-credits a:hover,
+#infinite-handle span:hover,
+#infinite-handle span:hover:before {
+	color: rgba(255,255,255,.7);
+	text-decoration: none;
+}
+.infinite-scroll #infinite-footer .container,
+#infinite-handle span {
+	background-color: rgba(57,172,160,.8);
+	border-color: rgba(57,172,160,.8);
+}
+#infinite-footer {
+	z-index: 9999;
+}
+
+/**
+ * Make sure that clicking Load more posts doesn't cause any jarringness.
+ */
+.infinite-scroll #infinite-handle {
+	float: left;
+	height: 70px;
+}
+.infinite-scroll #infinite-handle span {
+	display: block;
+}
+.infinite-scroll .infinite-loader {
+	margin: 0 0 42px;
+}
+
+
+/* =Sea Creatures
+----------------------------------------------- */
+
+#bubbles-1 {
+	background-image: url(/wp-content/themes/pub/something-fishy/img/bubbles.png);
+	background-position: 0 0;
+	z-index: 1;
+}
+#bubbles-2 {
+	background-color: transparent;
+	background-image: url(/wp-content/themes/pub/something-fishy/img/bubbles.png);
+	background-position: 80px 80px;
+	z-index: 4;
+}
+#fish {
+	background-image: url(/wp-content/themes/pub/something-fishy/img/fish.png);
+	background-position: 0 0;
+	z-index: 3;
+}
+#fish-2 {
+	background-image: url(/wp-content/themes/pub/something-fishy/img/fish2.png);
+	background-position: 0 0;
+	z-index: 3;
+}
+#orangefish {
+	background-image:url(/wp-content/themes/pub/something-fishy/img/orangefish.png);
+	background-repeat: no-repeat;
+	background-position: 1500px 90%;
+	position: absolute;
+		top: 0;
+		left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+}
+#orangefish-2 {
+	background-image:url(/wp-content/themes/pub/something-fishy/img/orangefish2.png);
+	background-repeat: no-repeat;
+	background-position: 0 92%;
+	position: absolute;
+		top: 0;
+		left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+}
+#fish,
+#fish-2,
+#bubbles-1,
+#bubbles-2 {
+	background-attachment: fixed;
+	background-color: transparent;
+	background-repeat: repeat;
+	position: absolute;
+		top: 0;
+		left: 0;
+	width: 100%;
+	height: 100%;
+	zoom: 1;
+}
+.sea-sprite {
+	background-image: url(/wp-content/themes/pub/something-fishy/img/sprite.png);
+	background-repeat: no-repeat;
+	position: relative;
+}
+#whale {
+	background-image:url(/wp-content/themes/pub/something-fishy/img/whale.png);
+	background-repeat: no-repeat;
+	background-position: 1050px 1000px;
+	position: absolute;
+		top: 0;
+		left: 0;
+	width: 100%;
+	height: 100%;
+}
+#bubbles {
+	width: 100px;
+	height: 120px;
+	background-position: -355px -205px;
+	background-size: 650px;
+	position: absolute;
+		bottom: 55px;
+		left: 740px;
+	z-index: 8;
+}
+#oyster {
+	width: 45px;
+	height: 45px;
+	background-position: -622px -228px;
+	background-size: 700px;
+	position: absolute;
+		bottom: 50px;
+		left: 160px;
+	z-index: 14;
+}
+#plants-1-sm {
+	width: 90px;
+	height: 83px;
+	background-position: -525px -290px;
+	background-size: 700px;
+	position: absolute;
+		bottom: 55px;
+		left: 1100px;
+	z-index: 10;
+}
+#plants-2-sm {
+	width: 31px;
+	height: 45px;
+	background-position: -670px -313px;
+	background-size: 700px;
+	position: absolute;
+		bottom: 65px;
+		left: 100px;
+	z-index: 6;
+}
+#hill-1 {
+	width: 145px;
+	height: 55px;
+	background-position: -370px -157px;
+	background-size: 700px;
+	position: absolute;
+		bottom: 35px;
+		left: 1000px;
+	z-index: 10;
+}
+#hill-2 {
+	width: 113px;
+	height: 56px;
+	background-position: -563px -144px;
+	background-size: 700px;
+	position: absolute;
+		bottom: 55px;
+		left: 170px;
+	z-index: 6;
+}
+#starfish {
+	width: 45px;
+	height: 40px;
+	background-position: -490px -420px;
+	background-size: 700px;
+	position: absolute;
+		bottom: 20px;
+		left: 850px;
+	z-index: 10;
+}
+#starfish-2 {
+	width: 70px;
+	height: 50px;
+	background-position: -400px -395px;
+	background-size: 700px;
+	position: absolute;
+		bottom: 20px;
+		left: 250px;
+	z-index: 9;
+}
+#dolphin {
+	background-image:url(/wp-content/themes/pub/something-fishy/img/dolphin.png);
+	background-repeat: no-repeat;
+	background-position: 100px 2200px;
+	position: absolute;
+		top: 0;
+		left: 0;
+	width: 100%;
+	height: 100%;
+}
+#jellyfish {
+	background-image:url(/wp-content/themes/pub/something-fishy/img/jellyfish.png);
+	background-repeat: no-repeat;
+	background-position: 100px 1700px;
+	position: absolute;
+		top: 0;
+		left: 0;
+	width: 100%;
+	height: 100%;
+}
+#turtle {
+	background-image:url(/wp-content/themes/pub/something-fishy/img/turtle.png);
+	background-repeat: no-repeat;
+	background-position: 900px 2500px;
+	position: absolute;
+		top: 0;
+		left: 0;
+	width: 100%;
+	height: 100%;
+}
+#crab {
+	background-image:url(/wp-content/themes/pub/something-fishy/img/crab.png);
+	background-repeat: no-repeat;
+	background-position: 1000px 99%;
+	position: absolute;
+		top: 0;
+		left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 16;
+}
+#plants-1-lg {
+	width: 127px;
+	height: 118px;
+	background-position: -236px -225px;
+	background-size: 700px;
+	position: absolute;
+		bottom: 45px;
+		left: 300px;
+	z-index: 6;
+}
+#snail {
+	width: 55px;
+	height: 45px;
+	background-position: -602px -410px;
+	background-size: 700px;
+	position: absolute;
+		bottom: 60px;
+		left: 895px;
+	z-index: 18;
+}
+#worm {
+	cursor: pointer;
+	width: 30px;
+	height: 450px;
+	background-position: -194px -36px;
+	background-size: 700px;
+	position: fixed;
+		top: -450px;
+		left: 5%;
+	transition: all .7s ease-in-out;
+	-webkit-transition: all .7s ease-in-out;
+	-moz-transition: all .7s ease-in-out;
+	-o-transition: all .7s ease-in-out;
+	z-index: 21;
+}
+#worm-bubble {
+	background: #fff;
+	border-radius: 50px;
+	color: #39aca0;
+	display: block;
+	font-size: 12px;
+	font-size: 1.2rem;
+	line-height: 14px;
+	opacity: 0;
+	overflow: visible;
+	padding: 5px;
+	position: absolute;
+		top: 360px;
+		left: 20px;
+	text-align: center;
+	transition: all .3s ease-in-out;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	visibility: hidden;
+	width: 60px;
+	height: auto;
+	z-index: 21;
+}
+#worm:hover > #worm-bubble,
+#worm:hover > #worm-bubble:after {
+	opacity: 1;
+	transition: all .3s ease-in-out;
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	visibility: visible;
+}
+#worm-bubble:after {
+	border-bottom: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid #fff;
+	border-left: 5px solid #fff;
+	content: "";
+	display: block;
+	position: absolute;
+		top: 96%;
+		left: 10px;
+	width: 0;
+	height: 0;
+	z-index: 19;
+}
+.reeds-sprite {
+	background-image: url(/wp-content/themes/pub/something-fishy/img/reeds.png);
+	background-repeat: no-repeat;
+}
+#reeds-1-lg {
+	background-size: 400px auto;
+	width: 120px;
+	height: 390px;
+	background-position: -100px 0;
+	position: absolute;
+		bottom: 30px;
+		left: 0;
+	z-index: 6;
+}
+#reeds-2-lg {
+	background-size: 400px auto;
+	width: 70px;
+	height: 330px;
+	background-position: -220px 0;
+	position: absolute;
+		bottom: 30px;
+		left: 880px;
+	z-index: 6;
+}
+#reeds-1-sm {
+	background-size: 200px auto;
+	width: 60px;
+	height: 195px;
+	background-position: -100px 0;
+	position: absolute;
+		bottom: 25px;
+		left: -40px;
+	z-index: 15;
+}
+#reeds-2-sm {
+	background-size: 200px auto;
+	width: 45px;
+	height: 195px;
+	background-position: -50px 0;
+	position: absolute;
+		bottom: 50px;
+		left: 960px;
+	z-index: 15;
+}
+#reeds-3-sm {
+	background-size: 400px auto;
+	width: 85px;
+	height: 275px;
+	background-position: -330px -10px;
+	position: absolute;
+		bottom: 50px;
+		left: -10px;
+	z-index: 3;
+}
+#reeds-4-sm {
+	background-size: 400px auto;
+	width: 105px;
+	height: 195px;
+	background-position: 0 -50px;
+	position: absolute;
+		bottom: 45px;
+		left: 900px;
+	z-index: 3;
+}
+#reeds-5-sm {
+	background-size: 400px auto;
+	width: 85px;
+	height: 275px;
+	background-position: -330px -10px;
+	position: absolute;
+		bottom: 45px;
+		left: 960px;
+	z-index: 3;
+}
+
+/* =Retina/Hi-DPI Graphics
+-----------------------------------------*/
+
+@media 	only screen and (-moz-min-device-pixel-ratio: 1.5),
+		only screen and (-o-min-device-pixel-ratio: 3/2),
+		only screen and (-webkit-min-device-pixel-ratio: 1.5),
+		only screen and (min-device-pixel-ratio: 1.5) {
+
+	.reeds-sprite {
+		background-image: url(/wp-content/themes/pub/something-fishy/img/reeds-2x.png);
+		background-repeat: no-repeat;
+	}
+	.sea-sprite {
+		background-image: url(/wp-content/themes/pub/something-fishy/img/sprite-2x.png);
+		background-repeat: no-repeat;
+		background-size: 700px;
+	}
+	#dolphin {
+		background-image:url(/wp-content/themes/pub/something-fishy/img/dolphin-2x.png);
+		background-size: 150px;
+	}
+	#crab {
+		background-image:url(/wp-content/themes/pub/something-fishy/img/crab-2x.png);
+		background-size: 85px;
+	}
+	#whale {
+		background-image:url(/wp-content/themes/pub/something-fishy/img/whale-2x.png);
+		background-size: 200px;
+	}
+	#bubbles-1,
+	#bubbles-2 {
+		background-image: url(/wp-content/themes/pub/something-fishy/img/bubbles-2x.png);
+		background-size: 400px auto;
+	}
+	#fish {
+		background-image: url(/wp-content/themes/pub/something-fishy/img/fish-2x.png);
+		background-size: 400px auto;
+	}
+	#fish-2 {
+		background-image: url(/wp-content/themes/pub/something-fishy/img/fish2-2x.png);
+		background-size: 300px auto;
+	}
+	#ocean-floor-background {
+		background-image: url(/wp-content/themes/pub/something-fishy/img/ground2-2x.png);
+		background-size: auto 100px;
+	}
+	#ocean-floor-background-2 {
+		background-image: url(/wp-content/themes/pub/something-fishy/img/ground-2x.png);
+		background-size: auto 114px;
+	}
+	#jellyfish {
+		background-image:url(/wp-content/themes/pub/something-fishy/img/jellyfish-2x.png);
+		background-size: 56px;
+	}
+	#turtle {
+		background-image:url(/wp-content/themes/pub/something-fishy/img/turtle-2x.png);
+		background-size: 125px;
+	}
+	#orangefish {
+		background-image:url(/wp-content/themes/pub/something-fishy/img/orangefish-2x.png);
+		background-size: 50px;
+	}
+	#orangefish-2 {
+		background-image:url(/wp-content/themes/pub/something-fishy/img/orangefish2-2x.png);
+		background-size: 30px;
+	}
+
+}
+
+
+/* =Responsive Media Queries
+-----------------------------------------*/
+
+@media only screen and ( min-width: 1000px ) and ( max-width: 1200px ) {
+	#main {
+		width: 800px;
+	}
+	#masthead {
+		width: 800px;
+	}
+	.comment-author {
+		width: 140px;
+	}
+	.comment-content,
+	.comment-content .comment-meta,
+	.reply {
+		padding-left: 161px;
+	}
+	.widget {
+		padding: 1.6em 1em;
+	}
+	.image-attachment .entry-meta {
+		width: 22%;
+		left: 623px;
+	}
+	#image-navigation .previous-image a,
+	#image-navigation .next-image a,
+	#image-navigation .previous-image-thumb img,
+	#image-navigation .next-image-thumb img {
+		font-size: 30px;
+		width: 30px;
+		height: 30px;
+	}
+	.footer-wrapper {
+		margin: 0 0 0 -450px;
+		width: 900px;
+	}
+	.footer-sidebars {
+		width: 800px;
+	}
+	#reeds-1-lg {
+		left: 0;
+	}
+	#reeds-2-lg {
+		left: 630px;
+	}
+	#reeds-1-sm {
+		left: 20px;
+	}
+	#reeds-2-sm {
+		left: 710px;
+	}
+	#reeds-3-sm {
+		left: 15px;
+	}
+	#reeds-4-sm {
+		left: 650px;
+	}
+	#reeds-5-sm {
+		left: 710px;
+	}
+	#plants-1-lg {
+		left: 250px;
+	}
+	#bubbles {
+		left: 580px;
+	}
+	#oyster {
+		left: 90px;
+	}
+	#plants-1-sm {
+		left: 740px;
+	}
+	#plants-2-sm {
+		left: 60px;
+	}
+	#hill-1 {
+		left: 800px;
+	}
+	#hill-2 {
+		left: 120px;
+	}
+	#starfish {
+		left: 620px;
+	}
+	#starfish-2 {
+		left: 180px;
+	}
+	#snail {
+		left: 880px;
+		bottom: 25px;
+	}
+	/*#snail {
+		bottom: 53px;
+	}*/
+}
+@media only screen and ( min-width: 500px ) and ( max-width: 1000px ) {
+	#main {
+		min-height: 200px;
+		width: 100%;
+	}
+	.main-navigation {
+		max-width: 100%;
+	}
+	#masthead {
+		max-width: 100%;
+	}
+	.image-attachment #content {
+		margin: 0;
+	}
+	.image-attachment .entry-meta {
+		background: transparent;
+		border-radius: 0;
+		clear: both;
+		float: none;
+		padding: 0;
+		position: relative;
+		left: auto;
+		right: 0;
+		width: 100%;
+	}
+	#image-navigation {
+		clear: both;
+		display: inline-block;
+		float: right;
+		position: relative;
+	}
+	#image-navigation .previous-image a,
+	#image-navigation .next-image a {
+		background: transparent;
+		border-radius: 0;
+		color: rgba(57, 172, 160, 1.0);
+		font-size: 16px;
+		width: auto;
+	}
+	#image-navigation .previous-image-thumb,
+	#image-navigation .next-image-thumb {
+		display: none;
+	}
+	.footer-wrapper {
+		margin: 0 auto;
+		left: 0;
+		width: 100%;
+	}
+	.footer-sidebars {
+		width: 100%;
+	}
+	#reeds-1-lg {
+		left: 0;
+	}
+	#reeds-2-lg {
+		left: auto;
+		right: 10%;
+	}
+	#reeds-1-sm {
+		left: 5%;
+	}
+	#reeds-2-sm {
+		left: auto;
+		right: 8%;
+	}
+	#reeds-3-sm {
+		left: 3%;
+	}
+	#reeds-4-sm {
+		left: auto;
+		right: 5%;
+	}
+	#reeds-5-sm {
+		left: auto;
+		right: 0;
+	}
+	#plants-1-lg {
+		left: 20%;
+	}
+	#bubbles {
+		left: 60%;
+	}
+	#oyster {
+		left: 15%;
+	}
+	#plants-1-sm {
+		left: auto;
+		right: 20%;
+		z-index: 6;
+	}
+	#plants-2-sm {
+		left: 25%;
+	}
+	#hill-1 {
+		display: none;
+	}
+	#hill-2 {
+		display: none;
+	}
+	#starfish {
+		left: 75%;
+	}
+	#starfish-2 {
+		left: 30%;
+	}
+	#snail {
+		bottom: 10px;
+		left: auto;
+		right: 1%;
+	}
+	/*#snail {
+		bottom: 38px;
+	}*/
+	#worm {
+		display: none;
+	}
+}
+@media only screen and ( max-width: 500px ) {
+	#main {
+		min-height: 300px;
+		width: 100%;
+	}
+	#masthead {
+		margin: 0 0 1.6em 0;
+		width: 100%;
+	}
+	#masthead hgroup {
+		width: 100%;
+	}
+	.site-title,
+	.site-title a {
+		background-size: 100px;
+		clear: both;
+		display: block;
+		font-size: 55px;
+		font-size: 5.5rem;
+		margin: 0 auto;
+		padding: 0;
+		position: relative;
+		text-align: center;
+		width: 100%;
+	}
+	.site-title:before {
+		clear: both;
+		display: block;
+		margin: 0 auto;
+		padding: 0;
+		position: relative;
+			top: auto;
+	}
+	.site-description {
+		color: #777;
+		float: none;
+		font-size: 18px;
+		font-size: 1.8rem;
+		margin: .8em auto;
+		padding: 0;
+		text-align: center;
+		max-width: 100%;
+		width: 100%;
+	}
+	.image-attachment #content {
+		margin: 0;
+	}
+	.image-attachment .entry-meta {
+		background: transparent;
+		border-radius: 0;
+		clear: both;
+		float: none;
+		padding: 0;
+		position: relative;
+		left: auto;
+		right: 0;
+		width: 100%;
+	}
+	#image-navigation {
+		clear: both;
+		display: inline-block;
+		float: right;
+		position: relative;
+	}
+	#image-navigation .previous-image a,
+	#image-navigation .next-image a {
+		background: transparent;
+		border-radius: 0;
+		color: rgba(57, 172, 160, 1.0);
+		font-size: 16px;
+		width: auto;
+	}
+	#image-navigation .previous-image-thumb,
+	#image-navigation .next-image-thumb {
+		display: none;
+	}
+	#content {
+		clear: both;
+		float: none;
+		margin: 0;
+		width: 100%;
+	}
+	#secondary {
+		clear: both;
+		width: 100%;
+	}
+	.footer-wrapper {
+		margin: 0 auto;
+		left: 0;
+		width: 100%;
+	}
+	.footer-sidebars {
+		width: 100%;
+	}
+	#footer-1,
+	#footer-2,
+	#footer-3 {
+		clear: both;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	.comment-author {
+		width: 100px;
+	}
+	.comment-content,
+	.comment-content .comment-meta,
+	.reply {
+		padding-left: 121px;
+	}
+	#reeds-1-lg {
+		left: 0;
+	}
+	#reeds-2-lg {
+		left: auto;
+		right: 10%;
+	}
+	#reeds-1-sm {
+		left: 5%;
+	}
+	#reeds-2-sm {
+		left: auto;
+		right: 8%;
+	}
+	#reeds-3-sm {
+		left: 3%;
+	}
+	#reeds-4-sm {
+		left: auto;
+		right: 5%;
+	}
+	#reeds-5-sm {
+		left: auto;
+		right: 0;
+	}
+	#plants-1-lg {
+		left: 20%;
+	}
+	#bubbles {
+		left: 60%;
+	}
+	#oyster {
+		left: 15%;
+	}
+	#plants-1-sm {
+		display: none;
+	}
+	#plants-2-sm {
+		display: none;
+	}
+	#hill-1 {
+		display: none;
+	}
+	#hill-2 {
+		display: none;
+	}
+	#starfish {
+		left: 75%;
+	}
+	#starfish-2 {
+		left: 30%;
+	}
+	#snail {
+		display: none;
+	}
+	#worm {
+		display: none;
+	}
+}

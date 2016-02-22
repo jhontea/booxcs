@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<!-- saved from url=(0090)https://tekekwalik.wordpress.com/2014/06/30/membuat-login-untuk-multi-user-di-codeigniter/ -->
+<html lang="id"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER | "Tekek walik"</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="https://tekekwalik.wordpress.com/xmlrpc.php">
+	<!--[if lt IE 9]>
+		<script src="https://s0.wp.com/wp-content/themes/pub/suits/js/html5.js" type="text/javascript"></script>
+	<![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="&quot;Tekek walik&quot; » Feed" href="https://tekekwalik.wordpress.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="&quot;Tekek walik&quot; » Umpan Komentar" href="https://tekekwalik.wordpress.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="&quot;Tekek walik&quot; » MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER Umpan Komentar" href="https://tekekwalik.wordpress.com/2014/06/30/membuat-login-untuk-multi-user-di-codeigniter/feed/">
+	<style type="text/css"></style><script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+	<link rel="stylesheet" id="all-css-0" href="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/saved_resource" type="text/css" media="all">
+<link rel="stylesheet" id="suits-font-css" href="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/css" type="text/css" media="all">
+<link rel="stylesheet" id="all-css-2" href="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/saved_resource(1)" type="text/css" media="all">
+<link rel="stylesheet" id="print-css-3" href="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/global-print.css" type="text/css" media="print">
+<link rel="stylesheet" id="all-css-4" href="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/saved_resource(2)" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var LoggedOutFollow = {"invalid_email":"Langganan Anda tidak berhasil. Silakan coba lagi dengan alamat email yang baru."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/saved_resource(3)"></script>
+<link rel="stylesheet" id="all-css-0" href="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/style.css" type="text/css" media="all">
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='https://s2.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563g&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://tekekwalik.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="launched tekekwalik" href="https://tekekwalik.wordpress.com/2014/06/30/launched-tekekwalik/">
+<link rel="next" title="komputer grafik “home theater”" href="https://tekekwalik.wordpress.com/2014/07/12/komputer-grafik-home-theater/">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="https://tekekwalik.wordpress.com/2014/06/30/membuat-login-untuk-multi-user-di-codeigniter/">
+<link rel="shortlink" href="http://wp.me/p4xRZW-o">
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=json&amp;url=https%3A%2F%2Ftekekwalik.wordpress.com%2F2014%2F06%2F30%2Fmembuat-login-untuk-multi-user-di-codeigniter%2F&amp;for=wpcom-auto-discovery"><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=xml&amp;url=https%3A%2F%2Ftekekwalik.wordpress.com%2F2014%2F06%2F30%2Fmembuat-login-untuk-multi-user-di-codeigniter%2F&amp;for=wpcom-auto-discovery">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER">
+<meta property="og:url" content="https://tekekwalik.wordpress.com/2014/06/30/membuat-login-untuk-multi-user-di-codeigniter/">
+<meta property="og:description" content="Kali ini saya akan memberikan tutorial cara membuat halaman login untuk multi user. Contohnya kali ini saya akan memberikan contoh pada sistem informasi percetakan yang diakses untuk 3 macam user, ...">
+<meta property="article:published_time" content="2014-06-30T16:16:10+00:00">
+<meta property="article:modified_time" content="2014-06-30T17:05:48+00:00">
+<meta property="og:site_name" content="&quot;Tekek walik&quot;">
+<meta property="og:image" content="https://s0.wp.com/i/blank.jpg">
+<meta property="og:locale" content="id_ID">
+<meta name="twitter:site" content="@wordpressdotcom">
+<meta name="twitter:card" content="summary">
+<meta property="fb:app_id" content="249643311490">
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom">
+<link rel="shortcut icon" type="image/x-icon" href="https://s2.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48">
+<link rel="icon" type="image/x-icon" href="https://s2.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48">
+<link rel="apple-touch-icon-precomposed" href="https://s0.wp.com/i/webclip.png">
+<link rel="openid.server" href="https://tekekwalik.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="https://tekekwalik.wordpress.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="https://tekekwalik.wordpress.com/osd.xml" title="&quot;Tekek walik&quot;">
+<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com">
+<meta name="theme-color" content="#efece6">
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+				<style type="text/css">
+			.recentcomments a {
+				display: inline !important;
+				padding: 0 !important;
+				margin: 0 !important;
+			}
+
+			table.recentcommentsavatartop img.avatar, table.recentcommentsavatarend img.avatar {
+				border: 0px;
+				margin: 0;
+			}
+
+			table.recentcommentsavatartop a, table.recentcommentsavatarend a {
+				border: 0px !important;
+				background-color: transparent !important;
+			}
+
+			td.recentcommentsavatarend, td.recentcommentsavatartop {
+				padding: 0px 0px 1px 0px;
+				margin: 0px;
+			}
+
+			td.recentcommentstextend {
+				border: none !important;
+				padding: 0px 0px 2px 10px;
+			}
+
+			.rtl td.recentcommentstextend {
+				padding: 0px 10px 2px 0px;
+			}
+
+			td.recentcommentstexttop {
+				border: none;
+				padding: 0px 0px 0px 10px;
+			}
+
+			.rtl td.recentcommentstexttop {
+				padding: 0px 10px 0px 0px;
+			}
+		</style>
+		<meta name="application-name" content="&quot;Tekek walik&quot;"><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-tooltip" content="&quot;ketika kata tak selalu benar&quot;"><meta name="msapplication-task" content="name=Berlangganan;action-uri=https://tekekwalik.wordpress.com/feed/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Mendaftar untuk blog gratis;action-uri=http://wordpress.com/signup/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Dukungan WordPress.com;action-uri=http://support.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Forum WordPress.com;action-uri=http://forums.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="title" content="MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER | &quot;Tekek walik&quot; pada WordPress.com">
+<meta name="description" content="Kali ini saya akan memberikan tutorial cara membuat halaman login untuk multi user. Contohnya kali ini saya akan memberikan contoh pada sistem informasi percetakan yang diakses untuk 3 macam user, yaitu user penulis, user editor, serta user untuk toko. Tiap tiap user akan masuk pada halaman yang berbeda. Pada kali ini saya menggunakan tamplate botstrap…">
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #efece6; }
+</style>
+		<script type="text/javascript" src="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/"></script>
+		<script type="text/javascript">
+		try { amznads.getAds("3033"); } catch(e) { /* ignore */ }
+		</script>
+		<script type="text/javascript">
+		try {
+			var a9_p = amznads.getKeys(),
+			_ipw_custom = {
+				wordAds: '0',
+				adSafe: '0',
+				domain: 'tekekwalik.wordpress.com',
+				pageURL: 'https://tekekwalik.wordpress.com/2014/06/30/membuat-login-untuk-multi-user-di-codeigniter/'
+			};
+			if("undefined"!=typeof a9_p&&""!=a9_p&&null!==a9_p&&"[object Array]"===Object.prototype.toString.call(a9_p)){var a="",b=0,c=a9_p.length;a9_p.sort();for(var d=0;d<c;d++){a9_p[d-b]=a9_p[d-b].replace(/a1x6p/,"a160x600p");var e=a9_p[d-b].split("p");e[0]==a&&(a9_p.splice(d-b,1),b++);a=e[0]}_ipw_custom.amznPay=a9_p};document.close();
+		} catch(e) {}
+		</script>		<!-- IPONWEB header script -->
+		<script type="text/javascript">
+			window.__ATA = {
+				scriptSrc: '//s.pubmine.com/showad.js',
+				slotPrefix: 'automattic-id-',
+				initAd: function(o) {
+					var o = o || {},
+						g = window,
+						d = g.document,
+						wr = d.write,
+						id = g.__ATA.id();
+					wr.call(d, '<div id="' + id + '" data-section="' + (o.sectionId || 0) + '"' + (o.type ? ('data-type="' + o.type + '"') : '') + ' ' + (o.forcedUrl ? ('data-forcedurl="' + o.forcedUrl + '"') : '') + ' style="width:' + (o.width || 0) + 'px; height:' + (o.height || 0) + 'px;">');
+					g.__ATA.displayAd(id);
+					wr.call(d, '</div>');
+				},
+				displayAd: function(id) {
+					window.__ATA.ids = window.__ATA.ids || {};
+					window.__ATA.ids[id] = 1;
+				},
+				customParams: _ipw_custom,
+				id: function() {
+					return window.__ATA.slotPrefix + (parseInt(Math.random() * 10000, 10) + 1 + (new Date()).getMilliseconds());
+				}
+			};
+			(function(d, ata) {
+				var pr = "https:" === d.location.protocol ? "https:" : "http:",
+					src = pr + ata.scriptSrc,
+					st = "text/javascript";
+				d.write('<scr' + 'ipt type="' + st + '" src="' + src + '"><\/scr' + 'ipt>');
+			})(window.document, window.__ATA);
+		</script><script type="text/javascript" src="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/"></script>
+		<script type="text/javascript">
+		jQuery(window).ready(function () {
+			jQuery("a.wpa-about").text("Tentang iklan-iklan ini");
+		});
+		</script><link rel="stylesheet" type="text/css" href="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/shCore.css"><link rel="stylesheet" type="text/css" href="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/shThemeDefault.css"><style type="text/css" id="syntaxhighlighteranchor"></style>
+<style type="text/css" id="custom-colors-css">.site-header h1.site-title{color:#fff}.site-header h2.site-description{color:#fff}.site-info{color:#fff}.site-info{color:#fff}a:hover{color:#333}.entry-content a,.comment-content a,.page-content a{color:#333}.entry-meta a:hover{color:#333}.nav-menu li a{color:#fff}.nav-menu li:hover>a,.nav-menu li a:hover{color:#fff}.nav-menu .current_page_item>a,.nav-menu .current_page_ancestor>a,.nav-menu .current-menu-item>a,.nav-menu .current-menu-ancestor>a{color:#fff}.nav-menu li:hover{background-color:#404040}body{background-color:#efece6}.site-header{background-color:#ab9d88}#navbar{background-color:#847969}.site-info-container{background-color:#847969}.nav-menu li:hover>a,.nav-menu li a:hover{background-color:#847969}.nav-menu li:hover>a,.nav-menu li a:hover{background-color:rgba(132,121,105,.8)}ul.nav-menu ul a:hover,.nav-menu ul ul a:hover{background-color:#847969}.nav-menu .current_page_item>a,.nav-menu .current_page_ancestor>a,.nav-menu .current-menu-item>a,.nav-menu .current-menu-ancestor>a{background-color:#847969}.nav-menu .sub-menu,.nav-menu .children{background-color:#655d51}a{color:#792d2b}.entry-content a,.comment-content a,.page-content a{color:#792d2b}.entry-meta a{color:#792d2b}body,h1,h2,h3,h4,h5,h6{color:#474747}h1,h2,h3,h4,h5,h6{color:#4f4f4f}.entry-meta{color:#4f4f4f}input{color:#4f4f4f}textarea{color:#4f4f4f}</style>
+<script type="text/javascript">
+	window.google_analytics_uacct = "UA-52447-2";
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script><script type="text/javascript" async="" src="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/ga.js"></script>
+<link rel="stylesheet" type="text/css" id="gravatar-card-css" href="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/services.css"></head>
+
+<body class="single single-post postid-24 single-format-standard custom-background mp6 customizer-styles-applied single-author one-footer-sidebar highlander-enabled highlander-light">
+	<div id="page" class="hfeed site">
+
+		<header id="masthead" class="site-header" role="banner">
+
+			<a class="home-link" href="https://tekekwalik.wordpress.com/" title="&quot;Tekek walik&quot;" rel="home">
+				<h1 class="site-title">"Tekek walik"</h1>
+				<h2 class="site-description">"ketika kata tak selalu benar"</h2>
+			</a><!-- #navbar .header-navigation -->
+
+			<div id="navbar" class="header-navigation">
+
+				<nav id="site-navigation" class="navigation main-navigation" role="navigation">
+					<h3 class="menu-toggle">Menu</h3>
+					<div class="menu-menu-1-container"><ul id="menu-menu-1" class="nav-menu"><li id="menu-item-22" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-22"><a href="https://tekekwalik.wordpress.com/">Beranda</a></li>
+<li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23"><a title="about" href="https://tekekwalik.wordpress.com/about/">About</a></li>
+<li id="menu-item-34" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-34"><a href="https://tekekwalik.wordpress.com/kuliah">Kuliah</a>
+<ul class="sub-menu">
+	<li id="menu-item-35" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-35"><a href="https://tekekwalik.wordpress.com/kuliah/SBD">SBD</a></li>
+	<li id="menu-item-36" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-36"><a href="https://tekekwalik.wordpress.com/kuliah/jarkom">Jarkom</a></li>
+</ul>
+</li>
+<li id="menu-item-47" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47"><a title="article" href="https://tekekwalik.wordpress.com/article">article</a></li>
+</ul></div>					<form role="search" method="get" class="search-form" action="https://tekekwalik.wordpress.com/">
+				<label>
+					<span class="screen-reader-text">Cari:</span>
+					<input type="search" class="search-field" placeholder="Cari …" value="" name="s" title="Cari:">
+				</label>
+				<input type="submit" class="search-submit" value="Cari">
+			</form>				</nav><!-- #site-navigation .navigation .main-navigation -->
+
+			</div><!-- #navbar .header-navigation -->
+
+		</header><!-- #masthead .site-header -->
+
+		<div id="main" class="site-main">
+
+	<div id="primary" class="content-area">
+
+		<div id="content" class="site-content" role="main">
+
+			
+<article id="post-24" class="post-24 post type-post status-publish format-standard hentry category-uncategorized">
+
+	
+			<header class="entry-header">
+
+				
+				<h1 class="entry-title">MEMBUAT LOGIN UNTUK MULTI USER DI&nbsp;CODEIGNITER</h1>
+			</header><!-- .entry-header -->
+
+											<div class="entry-content">
+					<p>Kali ini saya akan memberikan tutorial cara membuat halaman login untuk multi user. Contohnya kali ini saya akan memberikan contoh pada sistem informasi percetakan yang diakses untuk 3 macam user, yaitu user penulis, user editor, serta user untuk toko. Tiap tiap user akan masuk pada halaman yang berbeda. Pada kali ini saya menggunakan tamplate botstrap dimana semua sudah tersedia dan kita tinggal mengedit sesuai kebutuhan kita.<br>
+STEP 1 : Membuat tabel<br>
+Sobat diasumsikan sudah membuat database bernama <strong>percetakan </strong>dan membuat tabel bernama user dengan 5 field/kolom yaitu <strong>id_user, nama, email, username, password,</strong> dengan field id kita set sebagai primary key dengan nilai auto_increment.</p>
+<p>STEP 2 : Membuat model<br>
+Buat pada&nbsp;application\models\user.php&nbsp;dan isikan kode sebagai berikut :</p>
+<div><div id="highlighter_651327" class="syntaxhighlighter  plain"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div><div class="line number40 index39 alt1">40</div><div class="line number41 index40 alt2">41</div><div class="line number42 index41 alt1">42</div><div class="line number43 index42 alt2">43</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">&lt;?php</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="plain plain">Class User extends CI_Model</code></div><div class="line number4 index3 alt1">&nbsp;</div><div class="line number5 index4 alt2"><code class="plain plain">{</code></div><div class="line number6 index5 alt1">&nbsp;</div><div class="line number7 index6 alt2"><code class="plain plain">function login($username, $password)</code></div><div class="line number8 index7 alt1">&nbsp;</div><div class="line number9 index8 alt2"><code class="plain plain">{</code></div><div class="line number10 index9 alt1">&nbsp;</div><div class="line number11 index10 alt2"><code class="plain plain">$this -&amp;gt; db -&amp;gt; select('*');</code></div><div class="line number12 index11 alt1">&nbsp;</div><div class="line number13 index12 alt2"><code class="plain plain">$this -&amp;gt; db -&amp;gt; from('user');</code></div><div class="line number14 index13 alt1">&nbsp;</div><div class="line number15 index14 alt2"><code class="plain plain">$this -&amp;gt; db -&amp;gt; where('username', $username);</code></div><div class="line number16 index15 alt1">&nbsp;</div><div class="line number17 index16 alt2"><code class="plain plain">$this -&amp;gt; db -&amp;gt; where('password', $password);</code></div><div class="line number18 index17 alt1">&nbsp;</div><div class="line number19 index18 alt2"><code class="plain plain">//$this -&amp;gt; db -&amp;gt; limit(1);</code></div><div class="line number20 index19 alt1">&nbsp;</div><div class="line number21 index20 alt2"><code class="plain plain">$query = $this -&amp;gt; db -&amp;gt; get();</code></div><div class="line number22 index21 alt1">&nbsp;</div><div class="line number23 index22 alt2"><code class="plain plain">if($query -&amp;gt; num_rows() == 1)</code></div><div class="line number24 index23 alt1">&nbsp;</div><div class="line number25 index24 alt2"><code class="plain plain">{</code></div><div class="line number26 index25 alt1">&nbsp;</div><div class="line number27 index26 alt2"><code class="plain plain">return $query-&amp;gt;result();</code></div><div class="line number28 index27 alt1">&nbsp;</div><div class="line number29 index28 alt2"><code class="plain plain">}</code></div><div class="line number30 index29 alt1">&nbsp;</div><div class="line number31 index30 alt2"><code class="plain plain">else</code></div><div class="line number32 index31 alt1">&nbsp;</div><div class="line number33 index32 alt2"><code class="plain plain">{</code></div><div class="line number34 index33 alt1">&nbsp;</div><div class="line number35 index34 alt2"><code class="plain plain">return false;</code></div><div class="line number36 index35 alt1">&nbsp;</div><div class="line number37 index36 alt2"><code class="plain plain">}</code></div><div class="line number38 index37 alt1">&nbsp;</div><div class="line number39 index38 alt2"><code class="plain plain">}</code></div><div class="line number40 index39 alt1">&nbsp;</div><div class="line number41 index40 alt2"><code class="plain plain">}</code></div><div class="line number42 index41 alt1">&nbsp;</div><div class="line number43 index42 alt2"><code class="plain plain">?&gt;</code></div></div></td></tr></tbody></table></div></div>
+<p>&nbsp;</p>
+<p>STEP 3 : Membuat controller<br>
+Disini saya akan membuat 2 controller yaitu&nbsp;verifylogin.php&nbsp;dan&nbsp;welcome.php&nbsp;untuk yang pertama yaitu saya akan membuat&nbsp;application\controllers\verifylogin.php&nbsp;sebagai berikut :</p>
+<p>&nbsp;</p>
+<div><div id="highlighter_686949" class="syntaxhighlighter  plain"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div><div class="line number40 index39 alt1">40</div><div class="line number41 index40 alt2">41</div><div class="line number42 index41 alt1">42</div><div class="line number43 index42 alt2">43</div><div class="line number44 index43 alt1">44</div><div class="line number45 index44 alt2">45</div><div class="line number46 index45 alt1">46</div><div class="line number47 index46 alt2">47</div><div class="line number48 index47 alt1">48</div><div class="line number49 index48 alt2">49</div><div class="line number50 index49 alt1">50</div><div class="line number51 index50 alt2">51</div><div class="line number52 index51 alt1">52</div><div class="line number53 index52 alt2">53</div><div class="line number54 index53 alt1">54</div><div class="line number55 index54 alt2">55</div><div class="line number56 index55 alt1">56</div><div class="line number57 index56 alt2">57</div><div class="line number58 index57 alt1">58</div><div class="line number59 index58 alt2">59</div><div class="line number60 index59 alt1">60</div><div class="line number61 index60 alt2">61</div><div class="line number62 index61 alt1">62</div><div class="line number63 index62 alt2">63</div><div class="line number64 index63 alt1">64</div><div class="line number65 index64 alt2">65</div><div class="line number66 index65 alt1">66</div><div class="line number67 index66 alt2">67</div><div class="line number68 index67 alt1">68</div><div class="line number69 index68 alt2">69</div><div class="line number70 index69 alt1">70</div><div class="line number71 index70 alt2">71</div><div class="line number72 index71 alt1">72</div><div class="line number73 index72 alt2">73</div><div class="line number74 index73 alt1">74</div><div class="line number75 index74 alt2">75</div><div class="line number76 index75 alt1">76</div><div class="line number77 index76 alt2">77</div><div class="line number78 index77 alt1">78</div><div class="line number79 index78 alt2">79</div><div class="line number80 index79 alt1">80</div><div class="line number81 index80 alt2">81</div><div class="line number82 index81 alt1">82</div><div class="line number83 index82 alt2">83</div><div class="line number84 index83 alt1">84</div><div class="line number85 index84 alt2">85</div><div class="line number86 index85 alt1">86</div><div class="line number87 index86 alt2">87</div><div class="line number88 index87 alt1">88</div><div class="line number89 index88 alt2">89</div><div class="line number90 index89 alt1">90</div><div class="line number91 index90 alt2">91</div><div class="line number92 index91 alt1">92</div><div class="line number93 index92 alt2">93</div><div class="line number94 index93 alt1">94</div><div class="line number95 index94 alt2">95</div><div class="line number96 index95 alt1">96</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">&lt;/pre&gt;</code></div><div class="line number2 index1 alt1"><code class="plain plain">&lt;?php if (! defined('BASEPATH')) exit('no direct script access allowed');</code></div><div class="line number3 index2 alt2">&nbsp;</div><div class="line number4 index3 alt1"><code class="plain plain">&amp;nbsp;</code></div><div class="line number5 index4 alt2">&nbsp;</div><div class="line number6 index5 alt1"><code class="plain plain">class VerifyLogin extends CI_Controller {</code></div><div class="line number7 index6 alt2">&nbsp;</div><div class="line number8 index7 alt1"><code class="plain plain">function __construct(){</code></div><div class="line number9 index8 alt2">&nbsp;</div><div class="line number10 index9 alt1"><code class="plain plain">parent::__construct();</code></div><div class="line number11 index10 alt2">&nbsp;</div><div class="line number12 index11 alt1"><code class="plain plain">$this-&gt;load-&gt;model('user','',TRUE);</code></div><div class="line number13 index12 alt2">&nbsp;</div><div class="line number14 index13 alt1"><code class="plain plain">}</code></div><div class="line number15 index14 alt2">&nbsp;</div><div class="line number16 index15 alt1"><code class="plain plain">&amp;nbsp;</code></div><div class="line number17 index16 alt2">&nbsp;</div><div class="line number18 index17 alt1"><code class="plain plain">function index(){</code></div><div class="line number19 index18 alt2">&nbsp;</div><div class="line number20 index19 alt1"><code class="plain plain">$this-&gt;load-&gt;library('form_validation');</code></div><div class="line number21 index20 alt2">&nbsp;</div><div class="line number22 index21 alt1"><code class="plain plain">$this-&gt;form_validation-&gt;set_rules('username', 'Username', 'trim|required|xss_clean');</code></div><div class="line number23 index22 alt2">&nbsp;</div><div class="line number24 index23 alt1"><code class="plain plain">$this-&gt;form_validation-&gt;set_rules('password', 'Password', 'trim|required|xss_clean|callback_check_database');</code></div><div class="line number25 index24 alt2">&nbsp;</div><div class="line number26 index25 alt1"><code class="plain plain">&amp;nbsp;</code></div><div class="line number27 index26 alt2">&nbsp;</div><div class="line number28 index27 alt1"><code class="plain plain">if($this-&gt;form_validation-&gt;run()==FALSE)</code></div><div class="line number29 index28 alt2">&nbsp;</div><div class="line number30 index29 alt1"><code class="plain plain">{</code></div><div class="line number31 index30 alt2">&nbsp;</div><div class="line number32 index31 alt1"><code class="plain plain">$this-&gt;load-&gt;view('login_view');</code></div><div class="line number33 index32 alt2">&nbsp;</div><div class="line number34 index33 alt1"><code class="plain plain">}</code></div><div class="line number35 index34 alt2">&nbsp;</div><div class="line number36 index35 alt1"><code class="plain plain">else</code></div><div class="line number37 index36 alt2">&nbsp;</div><div class="line number38 index37 alt1"><code class="plain plain">{</code></div><div class="line number39 index38 alt2">&nbsp;</div><div class="line number40 index39 alt1"><code class="plain plain">//Go to private area</code></div><div class="line number41 index40 alt2">&nbsp;</div><div class="line number42 index41 alt1"><code class="plain plain">redirect('about', 'refresh');</code></div><div class="line number43 index42 alt2">&nbsp;</div><div class="line number44 index43 alt1"><code class="plain plain">}</code></div><div class="line number45 index44 alt2">&nbsp;</div><div class="line number46 index45 alt1"><code class="plain plain">}</code></div><div class="line number47 index46 alt2">&nbsp;</div><div class="line number48 index47 alt1"><code class="plain plain">&amp;nbsp;</code></div><div class="line number49 index48 alt2">&nbsp;</div><div class="line number50 index49 alt1"><code class="plain plain">function check_database($password)</code></div><div class="line number51 index50 alt2">&nbsp;</div><div class="line number52 index51 alt1"><code class="plain plain">{</code></div><div class="line number53 index52 alt2">&nbsp;</div><div class="line number54 index53 alt1"><code class="plain plain">$username = $this-&gt;input-&gt;post('username');</code></div><div class="line number55 index54 alt2">&nbsp;</div><div class="line number56 index55 alt1"><code class="plain plain">$result = $this-&gt;user-&gt;login($username, $password);</code></div><div class="line number57 index56 alt2">&nbsp;</div><div class="line number58 index57 alt1"><code class="plain plain">&amp;nbsp;</code></div><div class="line number59 index58 alt2">&nbsp;</div><div class="line number60 index59 alt1"><code class="plain plain">if($result)</code></div><div class="line number61 index60 alt2">&nbsp;</div><div class="line number62 index61 alt1"><code class="plain plain">{</code></div><div class="line number63 index62 alt2">&nbsp;</div><div class="line number64 index63 alt1"><code class="plain plain">$sess_array = array();</code></div><div class="line number65 index64 alt2">&nbsp;</div><div class="line number66 index65 alt1"><code class="plain plain">foreach ($result as $row ) {</code></div><div class="line number67 index66 alt2">&nbsp;</div><div class="line number68 index67 alt1"><code class="plain plain">$sess_array = array(</code></div><div class="line number69 index68 alt2">&nbsp;</div><div class="line number70 index69 alt1"><code class="plain plain">'id' =&gt; $row-&gt;id_user,</code></div><div class="line number71 index70 alt2">&nbsp;</div><div class="line number72 index71 alt1"><code class="plain plain">'username' =&gt; $row-&gt;username,</code></div><div class="line number73 index72 alt2">&nbsp;</div><div class="line number74 index73 alt1"><code class="plain plain">'level_user' =&gt; $row-&gt;level_user</code></div><div class="line number75 index74 alt2">&nbsp;</div><div class="line number76 index75 alt1"><code class="plain plain">);</code></div><div class="line number77 index76 alt2">&nbsp;</div><div class="line number78 index77 alt1"><code class="plain plain">$this-&gt;session-&gt;set_userdata('logged_in', $sess_array);</code></div><div class="line number79 index78 alt2">&nbsp;</div><div class="line number80 index79 alt1"><code class="plain plain">}</code></div><div class="line number81 index80 alt2">&nbsp;</div><div class="line number82 index81 alt1"><code class="plain plain">return TRUE;</code></div><div class="line number83 index82 alt2">&nbsp;</div><div class="line number84 index83 alt1"><code class="plain plain">}</code></div><div class="line number85 index84 alt2">&nbsp;</div><div class="line number86 index85 alt1"><code class="plain plain">else{</code></div><div class="line number87 index86 alt2">&nbsp;</div><div class="line number88 index87 alt1"><code class="plain plain">$this-&gt;form_validation-&gt;set_message('check_database', 'Invalid username or password');</code></div><div class="line number89 index88 alt2">&nbsp;</div><div class="line number90 index89 alt1"><code class="plain plain">return false;</code></div><div class="line number91 index90 alt2">&nbsp;</div><div class="line number92 index91 alt1"><code class="plain plain">}</code></div><div class="line number93 index92 alt2">&nbsp;</div><div class="line number94 index93 alt1"><code class="plain plain">}</code></div><div class="line number95 index94 alt2">&nbsp;</div><div class="line number96 index95 alt1"><code class="plain plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Yang kedua kita membuat application\controllers\welcome.php&nbsp;sebagai berikut :</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div><div id="highlighter_943678" class="syntaxhighlighter  plain"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">&lt;/pre&gt;</code></div><div class="line number2 index1 alt1"><code class="plain plain">&lt;?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');</code></div><div class="line number3 index2 alt2">&nbsp;</div><div class="line number4 index3 alt1"><code class="plain plain">&amp;nbsp;</code></div><div class="line number5 index4 alt2">&nbsp;</div><div class="line number6 index5 alt1"><code class="plain plain">class Welcome extends CI_Controller {</code></div><div class="line number7 index6 alt2">&nbsp;</div><div class="line number8 index7 alt1"><code class="plain plain">&amp;nbsp;</code></div><div class="line number9 index8 alt2">&nbsp;</div><div class="line number10 index9 alt1"><code class="plain plain">public function index()</code></div><div class="line number11 index10 alt2">&nbsp;</div><div class="line number12 index11 alt1"><code class="plain plain">{</code></div><div class="line number13 index12 alt2">&nbsp;</div><div class="line number14 index13 alt1"><code class="plain plain">$this-&gt;load-&gt;view('login_view');</code></div><div class="line number15 index14 alt2">&nbsp;</div><div class="line number16 index15 alt1"><code class="plain plain">}</code></div><div class="line number17 index16 alt2">&nbsp;</div><div class="line number18 index17 alt1"><code class="plain plain">&amp;nbsp;</code></div><div class="line number19 index18 alt2">&nbsp;</div><div class="line number20 index19 alt1"><code class="plain plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p>&nbsp;</p>
+<p>STEP 4 : Membuat login view</p>
+<p>selanjutanya kita membuat login view pada yang di letakkan pada application/view/loginview.php</p>
+<div><div id="highlighter_404621" class="syntaxhighlighter  plain"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div><div class="line number40 index39 alt1">40</div><div class="line number41 index40 alt2">41</div><div class="line number42 index41 alt1">42</div><div class="line number43 index42 alt2">43</div><div class="line number44 index43 alt1">44</div><div class="line number45 index44 alt2">45</div><div class="line number46 index45 alt1">46</div><div class="line number47 index46 alt2">47</div><div class="line number48 index47 alt1">48</div><div class="line number49 index48 alt2">49</div><div class="line number50 index49 alt1">50</div><div class="line number51 index50 alt2">51</div><div class="line number52 index51 alt1">52</div><div class="line number53 index52 alt2">53</div><div class="line number54 index53 alt1">54</div><div class="line number55 index54 alt2">55</div><div class="line number56 index55 alt1">56</div><div class="line number57 index56 alt2">57</div><div class="line number58 index57 alt1">58</div><div class="line number59 index58 alt2">59</div><div class="line number60 index59 alt1">60</div><div class="line number61 index60 alt2">61</div><div class="line number62 index61 alt1">62</div><div class="line number63 index62 alt2">63</div><div class="line number64 index63 alt1">64</div><div class="line number65 index64 alt2">65</div><div class="line number66 index65 alt1">66</div><div class="line number67 index66 alt2">67</div><div class="line number68 index67 alt1">68</div><div class="line number69 index68 alt2">69</div><div class="line number70 index69 alt1">70</div><div class="line number71 index70 alt2">71</div><div class="line number72 index71 alt1">72</div><div class="line number73 index72 alt2">73</div><div class="line number74 index73 alt1">74</div><div class="line number75 index74 alt2">75</div><div class="line number76 index75 alt1">76</div><div class="line number77 index76 alt2">77</div><div class="line number78 index77 alt1">78</div><div class="line number79 index78 alt2">79</div><div class="line number80 index79 alt1">80</div><div class="line number81 index80 alt2">81</div><div class="line number82 index81 alt1">82</div><div class="line number83 index82 alt2">83</div><div class="line number84 index83 alt1">84</div><div class="line number85 index84 alt2">85</div><div class="line number86 index85 alt1">86</div><div class="line number87 index86 alt2">87</div><div class="line number88 index87 alt1">88</div><div class="line number89 index88 alt2">89</div><div class="line number90 index89 alt1">90</div><div class="line number91 index90 alt2">91</div><div class="line number92 index91 alt1">92</div><div class="line number93 index92 alt2">93</div><div class="line number94 index93 alt1">94</div><div class="line number95 index94 alt2">95</div><div class="line number96 index95 alt1">96</div><div class="line number97 index96 alt2">97</div><div class="line number98 index97 alt1">98</div><div class="line number99 index98 alt2">99</div><div class="line number100 index99 alt1">100</div><div class="line number101 index100 alt2">101</div><div class="line number102 index101 alt1">102</div><div class="line number103 index102 alt2">103</div><div class="line number104 index103 alt1">104</div><div class="line number105 index104 alt2">105</div><div class="line number106 index105 alt1">106</div><div class="line number107 index106 alt2">107</div><div class="line number108 index107 alt1">108</div><div class="line number109 index108 alt2">109</div><div class="line number110 index109 alt1">110</div><div class="line number111 index110 alt2">111</div><div class="line number112 index111 alt1">112</div><div class="line number113 index112 alt2">113</div><div class="line number114 index113 alt1">114</div><div class="line number115 index114 alt2">115</div><div class="line number116 index115 alt1">116</div><div class="line number117 index116 alt2">117</div><div class="line number118 index117 alt1">118</div><div class="line number119 index118 alt2">119</div><div class="line number120 index119 alt1">120</div><div class="line number121 index120 alt2">121</div><div class="line number122 index121 alt1">122</div><div class="line number123 index122 alt2">123</div><div class="line number124 index123 alt1">124</div><div class="line number125 index124 alt2">125</div><div class="line number126 index125 alt1">126</div><div class="line number127 index126 alt2">127</div><div class="line number128 index127 alt1">128</div><div class="line number129 index128 alt2">129</div><div class="line number130 index129 alt1">130</div><div class="line number131 index130 alt2">131</div><div class="line number132 index131 alt1">132</div><div class="line number133 index132 alt2">133</div><div class="line number134 index133 alt1">134</div><div class="line number135 index134 alt2">135</div><div class="line number136 index135 alt1">136</div><div class="line number137 index136 alt2">137</div><div class="line number138 index137 alt1">138</div><div class="line number139 index138 alt2">139</div><div class="line number140 index139 alt1">140</div><div class="line number141 index140 alt2">141</div><div class="line number142 index141 alt1">142</div><div class="line number143 index142 alt2">143</div><div class="line number144 index143 alt1">144</div><div class="line number145 index144 alt2">145</div><div class="line number146 index145 alt1">146</div><div class="line number147 index146 alt2">147</div><div class="line number148 index147 alt1">148</div><div class="line number149 index148 alt2">149</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">&lt;!DOCTYPE html&gt;</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="plain plain">&lt;html class="bootstrap-admin-vertical-centered"&gt;</code></div><div class="line number4 index3 alt1">&nbsp;</div><div class="line number5 index4 alt2"><code class="plain plain">&lt;head&gt;&lt;?php $this-&gt;load-&gt;helper('url');?&gt;</code></div><div class="line number6 index5 alt1">&nbsp;</div><div class="line number7 index6 alt2"><code class="plain plain">&lt;title&gt;Login page | Buku Pintar&lt;/title&gt;</code></div><div class="line number8 index7 alt1">&nbsp;</div><div class="line number9 index8 alt2"><code class="plain plain">&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;</code></div><div class="line number10 index9 alt1">&nbsp;</div><div class="line number11 index10 alt2"><code class="plain plain">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></div><div class="line number12 index11 alt1">&nbsp;</div><div class="line number13 index12 alt2"><code class="plain plain">&amp;nbsp;</code></div><div class="line number14 index13 alt1">&nbsp;</div><div class="line number15 index14 alt2"><code class="plain plain">&lt;!-- Bootstrap --&gt;</code></div><div class="line number16 index15 alt1">&nbsp;</div><div class="line number17 index16 alt2"><code class="plain plain">&lt;link rel="stylesheet" media="screen" href="&lt;?php echo base_url() ?&gt;/asset/css/bootstrap.min.css"&gt;</code></div><div class="line number18 index17 alt1">&nbsp;</div><div class="line number19 index18 alt2"><code class="plain plain">&lt;link rel="stylesheet" media="screen" href="&lt;?php echo base_url() ?&gt;/asset/css/bootstrap-theme.min.css"&gt;</code></div><div class="line number20 index19 alt1">&nbsp;</div><div class="line number21 index20 alt2"><code class="plain plain">&amp;nbsp;</code></div><div class="line number22 index21 alt1">&nbsp;</div><div class="line number23 index22 alt2"><code class="plain plain">&lt;!-- Bootstrap Admin Theme --&gt;</code></div><div class="line number24 index23 alt1">&nbsp;</div><div class="line number25 index24 alt2"><code class="plain plain">&lt;link rel="stylesheet" media="screen" href="&lt;?php echo base_url() ?&gt;/asset/css/bootstrap-admin-theme.css"&gt;</code></div><div class="line number26 index25 alt1">&nbsp;</div><div class="line number27 index26 alt2"><code class="plain plain">&amp;nbsp;</code></div><div class="line number28 index27 alt1">&nbsp;</div><div class="line number29 index28 alt2"><code class="plain plain">&lt;!-- Custom styles --&gt;</code></div><div class="line number30 index29 alt1">&nbsp;</div><div class="line number31 index30 alt2"><code class="plain plain">&lt;style type="text/css"&gt;</code></div><div class="line number32 index31 alt1">&nbsp;</div><div class="line number33 index32 alt2"><code class="plain plain">.alert{</code></div><div class="line number34 index33 alt1">&nbsp;</div><div class="line number35 index34 alt2"><code class="plain plain">margin: 0 auto 20px;</code></div><div class="line number36 index35 alt1">&nbsp;</div><div class="line number37 index36 alt2"><code class="plain plain">}</code></div><div class="line number38 index37 alt1">&nbsp;</div><div class="line number39 index38 alt2"><code class="plain plain">&lt;/style&gt;</code></div><div class="line number40 index39 alt1">&nbsp;</div><div class="line number41 index40 alt2"><code class="plain plain">&amp;nbsp;</code></div><div class="line number42 index41 alt1">&nbsp;</div><div class="line number43 index42 alt2"><code class="plain plain">&lt;!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --&gt;</code></div><div class="line number44 index43 alt1">&nbsp;</div><div class="line number45 index44 alt2"><code class="plain plain">&lt;!--[if lt IE 9]&gt;</code></div><div class="line number46 index45 alt1">&nbsp;</div><div class="line number47 index46 alt2"><code class="plain plain">&lt;script type="text/javascript" src="js/html5shiv.js"&gt;&lt;/script&gt;</code></div><div class="line number48 index47 alt1">&nbsp;</div><div class="line number49 index48 alt2"><code class="plain plain">&lt;script type="text/javascript" src="js/respond.min.js"&gt;&lt;/script&gt;</code></div><div class="line number50 index49 alt1">&nbsp;</div><div class="line number51 index50 alt2"><code class="plain plain">&lt;![endif]--&gt;</code></div><div class="line number52 index51 alt1">&nbsp;</div><div class="line number53 index52 alt2"><code class="plain plain">&lt;/head&gt;</code></div><div class="line number54 index53 alt1">&nbsp;</div><div class="line number55 index54 alt2"><code class="plain plain">&lt;body class="bootstrap-admin-without-padding"&gt;</code></div><div class="line number56 index55 alt1">&nbsp;</div><div class="line number57 index56 alt2"><code class="plain plain">&lt;div class="container"&gt;</code></div><div class="line number58 index57 alt1">&nbsp;</div><div class="line number59 index58 alt2"><code class="plain plain">&lt;div class="row"&gt;</code></div><div class="line number60 index59 alt1">&nbsp;</div><div class="line number61 index60 alt2"><code class="plain plain">&lt;div class="alert alert-info"&gt;</code></div><div class="line number62 index61 alt1">&nbsp;</div><div class="line number63 index62 alt2"><code class="plain plain">&lt;a class="close" data-dismiss="alert" href="#"&gt;&amp;times;&lt;/a&gt;</code></div><div class="line number64 index63 alt1">&nbsp;</div><div class="line number65 index64 alt2"><code class="plain plain">Press enter key or click the Submit button</code></div><div class="line number66 index65 alt1">&nbsp;</div><div class="line number67 index66 alt2"><code class="plain plain">&lt;/div&gt;</code></div><div class="line number68 index67 alt1">&nbsp;</div><div class="line number69 index68 alt2"><code class="plain plain">&lt;!--form method="post" action="about_c" class="bootstrap-admin-login-form"--&gt;</code></div><div class="line number70 index69 alt1">&nbsp;</div><div class="line number71 index70 alt2"><code class="plain plain">&lt;?php echo form_open('verifylogin', array('method'=&gt;'post','class'=&gt;'bootstrap-admin-login-form')); ?&gt;</code></div><div class="line number72 index71 alt1">&nbsp;</div><div class="line number73 index72 alt2"><code class="plain plain">&lt;h1&gt;Login&lt;/h1&gt;</code></div><div class="line number74 index73 alt1">&nbsp;</div><div class="line number75 index74 alt2"><code class="plain plain">&lt;div class="form-group"&gt;</code></div><div class="line number76 index75 alt1">&nbsp;</div><div class="line number77 index76 alt2"><code class="plain plain">&lt;input class="form-control" type="text" name="username" placeholder="Username"&gt;</code></div><div class="line number78 index77 alt1">&nbsp;</div><div class="line number79 index78 alt2"><code class="plain plain">&lt;/div&gt;</code></div><div class="line number80 index79 alt1">&nbsp;</div><div class="line number81 index80 alt2"><code class="plain plain">&lt;div class="form-group"&gt;</code></div><div class="line number82 index81 alt1">&nbsp;</div><div class="line number83 index82 alt2"><code class="plain plain">&lt;input class="form-control" type="password" name="password" placeholder="Password"&gt;</code></div><div class="line number84 index83 alt1">&nbsp;</div><div class="line number85 index84 alt2"><code class="plain plain">&lt;/div&gt;</code></div><div class="line number86 index85 alt1">&nbsp;</div><div class="line number87 index86 alt2"><code class="plain plain">&lt;div class="form-group"&gt;</code></div><div class="line number88 index87 alt1">&nbsp;</div><div class="line number89 index88 alt2"><code class="plain plain">&lt;label&gt;</code></div><div class="line number90 index89 alt1">&nbsp;</div><div class="line number91 index90 alt2"><code class="plain plain">&lt;input type="checkbox" name="remember_me"&gt;</code></div><div class="line number92 index91 alt1">&nbsp;</div><div class="line number93 index92 alt2"><code class="plain plain">Remember me</code></div><div class="line number94 index93 alt1">&nbsp;</div><div class="line number95 index94 alt2"><code class="plain plain">&lt;/label&gt;</code></div><div class="line number96 index95 alt1">&nbsp;</div><div class="line number97 index96 alt2"><code class="plain plain">&lt;/div&gt;</code></div><div class="line number98 index97 alt1">&nbsp;</div><div class="line number99 index98 alt2"><code class="plain plain">&lt;button class="btn btn-lg btn-primary" type="submit"&gt;Submit&lt;/button&gt;</code></div><div class="line number100 index99 alt1">&nbsp;</div><div class="line number101 index100 alt2"><code class="plain plain">&lt;?php echo form_close();?&gt;</code></div><div class="line number102 index101 alt1">&nbsp;</div><div class="line number103 index102 alt2"><code class="plain plain">&lt;/div&gt;</code></div><div class="line number104 index103 alt1">&nbsp;</div><div class="line number105 index104 alt2"><code class="plain plain">&lt;/div&gt;</code></div><div class="line number106 index105 alt1">&nbsp;</div><div class="line number107 index106 alt2"><code class="plain plain">&amp;nbsp;</code></div><div class="line number108 index107 alt1">&nbsp;</div><div class="line number109 index108 alt2"><code class="plain plain">&lt;script type="text/javascript" src="<a href="http://code.jquery.com/jquery-2.0.3.min.js">http://code.jquery.com/jquery-2.0.3.min.js</a>"&gt;&lt;/script&gt;</code></div><div class="line number110 index109 alt1">&nbsp;</div><div class="line number111 index110 alt2"><code class="plain plain">&lt;script type="text/javascript" src="&lt;?php echo base_url(); ?&gt;asset/js/bootstrap.min.js"&gt;&lt;/script&gt;</code></div><div class="line number112 index111 alt1">&nbsp;</div><div class="line number113 index112 alt2"><code class="plain plain">&lt;script type="text/javascript"&gt;</code></div><div class="line number114 index113 alt1">&nbsp;</div><div class="line number115 index114 alt2"><code class="plain plain">$(function() {</code></div><div class="line number116 index115 alt1">&nbsp;</div><div class="line number117 index116 alt2"><code class="plain plain">// Setting focus</code></div><div class="line number118 index117 alt1">&nbsp;</div><div class="line number119 index118 alt2"><code class="plain plain">$('input[name="username"]').focus();</code></div><div class="line number120 index119 alt1">&nbsp;</div><div class="line number121 index120 alt2"><code class="plain plain">&amp;nbsp;</code></div><div class="line number122 index121 alt1">&nbsp;</div><div class="line number123 index122 alt2"><code class="plain plain">// Setting width of the alert box</code></div><div class="line number124 index123 alt1">&nbsp;</div><div class="line number125 index124 alt2"><code class="plain plain">var alert = $('.alert');</code></div><div class="line number126 index125 alt1">&nbsp;</div><div class="line number127 index126 alt2"><code class="plain plain">var formWidth = $('.bootstrap-admin-login-form').innerWidth();</code></div><div class="line number128 index127 alt1">&nbsp;</div><div class="line number129 index128 alt2"><code class="plain plain">var alertPadding = parseInt($('.alert').css('padding'));</code></div><div class="line number130 index129 alt1">&nbsp;</div><div class="line number131 index130 alt2"><code class="plain plain">&amp;nbsp;</code></div><div class="line number132 index131 alt1">&nbsp;</div><div class="line number133 index132 alt2"><code class="plain plain">if(isNaN(alertPadding)){</code></div><div class="line number134 index133 alt1">&nbsp;</div><div class="line number135 index134 alt2"><code class="plain plain">alertPadding = parseInt($(alert).css('padding-left'));</code></div><div class="line number136 index135 alt1">&nbsp;</div><div class="line number137 index136 alt2"><code class="plain plain">}</code></div><div class="line number138 index137 alt1">&nbsp;</div><div class="line number139 index138 alt2"><code class="plain plain">&amp;nbsp;</code></div><div class="line number140 index139 alt1">&nbsp;</div><div class="line number141 index140 alt2"><code class="plain plain">$('.alert').width(formWidth - 2 * alertPadding);</code></div><div class="line number142 index141 alt1">&nbsp;</div><div class="line number143 index142 alt2"><code class="plain plain">});</code></div><div class="line number144 index143 alt1">&nbsp;</div><div class="line number145 index144 alt2"><code class="plain plain">&lt;/script&gt;</code></div><div class="line number146 index145 alt1">&nbsp;</div><div class="line number147 index146 alt2"><code class="plain plain">&lt;/body&gt;</code></div><div class="line number148 index147 alt1">&nbsp;</div><div class="line number149 index148 alt2"><code class="plain plain">&lt;/html&gt;</code></div></div></td></tr></tbody></table></div></div>
+<p>STEP 5 : Membuat halaman admin<br>
+membuat halaman admin dimana disini yang menentukan akan di arahkan kemana tiap usernya.</p>
+<div><div id="highlighter_53376" class="syntaxhighlighter  plain"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div><div class="line number40 index39 alt1">40</div><div class="line number41 index40 alt2">41</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="plain plain">&lt;?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');</code></div><div class="line number2 index1 alt1"><code class="plain plain">session_start();</code></div><div class="line number3 index2 alt2"><code class="plain plain">class About extends CI_Controller {</code></div><div class="line number4 index3 alt1">&nbsp;</div><div class="line number5 index4 alt2"><code class="plain spaces">&nbsp;</code><code class="plain plain">function __construct()</code></div><div class="line number6 index5 alt1"><code class="plain spaces">&nbsp;</code><code class="plain plain">{</code></div><div class="line number7 index6 alt2"><code class="plain spaces">&nbsp;&nbsp;&nbsp;</code><code class="plain plain">parent::__construct();</code></div><div class="line number8 index7 alt1"><code class="plain spaces">&nbsp;</code><code class="plain plain">}</code></div><div class="line number9 index8 alt2">&nbsp;</div><div class="line number10 index9 alt1"><code class="plain spaces">&nbsp;</code><code class="plain plain">function index()</code></div><div class="line number11 index10 alt2"><code class="plain spaces">&nbsp;</code><code class="plain plain">{</code></div><div class="line number12 index11 alt1"><code class="plain spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain plain">if($this-&gt;session-&gt;userdata('logged_in')){</code></div><div class="line number13 index12 alt2"><code class="plain spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain plain">$this-&gt;load-&gt;model('user');</code></div><div class="line number14 index13 alt1"><code class="plain spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain plain">$this-&gt;load-&gt;model('profile');</code></div><div class="line number15 index14 alt2"><code class="plain spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain plain">$session_data = $this-&gt;session-&gt;userdata('logged_in');</code></div><div class="line number16 index15 alt1"><code class="plain spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain plain">$id_user=$session_data['id'];</code></div><div class="line number17 index16 alt2"><code class="plain spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain plain">$var['username'] = $session_data['username'];</code></div><div class="line number18 index17 alt1"><code class="plain spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain plain">if($session_data['level_user']== "1"){</code></div><div class="line number19 index18 alt2"><code class="plain spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain plain">$this-&gt;load-&gt;view('editor_view')</code></div><div class="line number20 index19 alt1"><code class="plain spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain plain">}elseif($session_data['level_user'] == "2"){</code></div><div class="line number21 index20 alt2"><code class="plain spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain plain">$this-&gt;load-&gt;view('penulis_view')</code></div><div class="line number22 index21 alt1"><code class="plain spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain plain">}elseif($session_data['level_user'] == "3"){</code></div><div class="line number23 index22 alt2"><code class="plain spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain plain">$this-&gt;load-&gt;view('toko_view')</code></div><div class="line number24 index23 alt1"><code class="plain spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain plain">}</code></div><div class="line number25 index24 alt2">&nbsp;</div><div class="line number26 index25 alt1"><code class="plain spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain plain">$this-&gt;load-&gt;view('editor_view',$var);</code></div><div class="line number27 index26 alt2"><code class="plain spaces">&nbsp;&nbsp;&nbsp;</code><code class="plain plain">}else{</code></div><div class="line number28 index27 alt1"><code class="plain spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="plain plain">redirect('welcome', 'refresh');</code></div><div class="line number29 index28 alt2"><code class="plain spaces">&nbsp;&nbsp;&nbsp;</code><code class="plain plain">}</code></div><div class="line number30 index29 alt1">&nbsp;</div><div class="line number31 index30 alt2"><code class="plain spaces">&nbsp;</code><code class="plain plain">}</code></div><div class="line number32 index31 alt1">&nbsp;</div><div class="line number33 index32 alt2"><code class="plain spaces">&nbsp;</code><code class="plain plain">function logout()</code></div><div class="line number34 index33 alt1"><code class="plain spaces">&nbsp;</code><code class="plain plain">{</code></div><div class="line number35 index34 alt2"><code class="plain spaces">&nbsp;&nbsp;&nbsp;</code><code class="plain plain">$this-&gt;session-&gt;unset_userdata('logged_in');</code></div><div class="line number36 index35 alt1"><code class="plain spaces">&nbsp;&nbsp;&nbsp;</code><code class="plain plain">session_destroy();</code></div><div class="line number37 index36 alt2"><code class="plain spaces">&nbsp;&nbsp;&nbsp;</code><code class="plain plain">redirect('welcome', 'refresh');</code></div><div class="line number38 index37 alt1"><code class="plain spaces">&nbsp;</code><code class="plain plain">}</code></div><div class="line number39 index38 alt2"><code class="plain plain">}</code></div><div class="line number40 index39 alt1">&nbsp;</div><div class="line number41 index40 alt2"><code class="plain plain">?&gt;</code></div></div></td></tr></tbody></table></div></div>
+<p>setelah membuat itu semua harusnya kita membuat halaman view serta controller untuk tiap tiap menu yang ada pada<br>
+tiap tiap user. akan tetapi dalam tutorial ini hanya menjelaskan menu login. untuk lebih jelasnya kita bahas<br>
+runtutan cara kerja dalam menu login ini.</p>
+<p>pertama dimulai dari login_view.php dalam login view ini kita kan mengisikan username dan password pada apabila password<br>
+dan username belum diisi akan tetapi sudah login akan muncul tanda peringatan. setelah username dan password<br>
+diisikan lalu tombol login memverifikasikan username dan password apakah benar atau salah. dalam hal ini langsung<br>
+menuju pada verifylogin.php yang ada pada controller.di verify login ini username dan password disamakan dengan<br>
+data yang ada pada database. apabila sudah masuk sesuai username dan password halaman ini mengambil user level dimana<br>
+tiap user level yang menemtukan apakah user ini penulis, toko , atau editor. dan setelah masuk pada itu akan masuk<br>
+pada halaman awal user masing masing.</p>
+<p>demikian tutorial yang dapat saya sampaikan kalau ada pertanyaan atau hal yang lain dapat di emailkan di <a href="http://yahoo.com/">tekek.walik@yahoo.co.id </a></p>
+		<div class="wpcnt">
+			<div class="wpa wpmrec">
+				<a class="wpa-about" href="https://wordpress.com/about-these-ads/" rel="nofollow">Tentang iklan-iklan ini</a>
+				<div class="u">
+					<script type="text/javascript">
+					(function(g){g.__ATA.initAd({sectionId:26942, width:300, height:250});})(window);
+					</script><div id="automattic-id-4651" data-section="26942" style="width:300px; height:250px;"></div>
+				</div>
+			</div>
+		</div><div id="jp-post-flair" class="sharedaddy sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-24" class="share-twitter sd-button share-icon" href="https://tekekwalik.wordpress.com/2014/06/30/membuat-login-untuk-multi-user-di-codeigniter/?share=twitter&amp;nb=1" target="_blank" title="Klik untuk berbagi pada Twitter"><span>Twitter</span></a></li><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-24" class="share-facebook sd-button share-icon" href="https://tekekwalik.wordpress.com/2014/06/30/membuat-login-untuk-multi-user-di-codeigniter/?share=facebook&amp;nb=1" target="_blank" title="Bagikan pada Facebook"><span>Facebook</span></a></li><li class="share-google-plus-1"><a rel="nofollow" data-shared="sharing-google-24" class="share-google-plus-1 sd-button share-icon" href="https://tekekwalik.wordpress.com/2014/06/30/membuat-login-untuk-multi-user-di-codeigniter/?share=google-plus-1&amp;nb=1" target="_blank" title="Klik untuk berbagi via Google+"><span>Google</span></a></li><li class="share-end"></li></ul></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-loaded" id="like-post-wrapper-67177740-24-56c2e19008e42" data-src="//widgets.wp.com/likes/#blog_id=67177740&amp;post_id=24&amp;origin=tekekwalik.wordpress.com&amp;obj_id=67177740-24-56c2e19008e42" data-name="like-post-frame-67177740-24-56c2e19008e42"><h3 class="sd-title">Sukai ini:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px; display: none;"><span class="button"><span>Suka</span></span> <span class="loading">Memuat...</span></div><iframe class="post-likes-widget jetpack-likes-widget" name="like-post-frame-67177740-24-56c2e19008e42" height="55px" width="100%" frameborder="0" src="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/saved_resource.html"></iframe><span class="sd-text-color"></span><a class="sd-link-color"></a></div></div>									</div><!-- .entry-content -->
+			
+			<footer class="entry-meta">
+				Posted in <a href="https://tekekwalik.wordpress.com/category/uncategorized/" rel="category tag">Uncategorized</a> <span class="on-date"> on <a href="https://tekekwalik.wordpress.com/2014/06/30/membuat-login-untuk-multi-user-di-codeigniter/" title="4:16 pm" rel="bookmark"><time class="entry-date" datetime="2014-06-30T16:16:10+00:00">Juni 30, 2014</time></a></span><span class="by-author"> by <span class="author vcard"><a class="url fn n" href="https://tekekwalik.wordpress.com/author/anggasaputra4/" title="Lihat semua pos milik anggasaputra4" rel="author">anggasaputra4</a></span></span>.
+									<a href="https://tekekwalik.wordpress.com/2014/06/30/membuat-login-untuk-multi-user-di-codeigniter/#respond"><span class="leave-reply">Tinggalkan komentar</span></a>				
+							</footer><!-- .entry-meta -->
+
+
+</article><!-- #post-# .#post-class-# -->
+
+	<nav role="navigation" id="nav-below" class="post-navigation">
+		<h1 class="screen-reader-text">Navigasi pos</h1>
+
+	
+		<div class="nav-previous"><a href="https://tekekwalik.wordpress.com/2014/06/30/launched-tekekwalik/" rel="prev"><span class="meta-nav">←</span> launched tekekwalik</a></div>		<div class="nav-next"><a href="https://tekekwalik.wordpress.com/2014/07/12/komputer-grafik-home-theater/" rel="next">komputer grafik “home&nbsp;theater” <span class="meta-nav">→</span></a></div>
+	
+	</nav><!-- #nav-below -->
+
+	
+<div id="comments" class="comments-area">
+
+	
+					<div id="respond" class="comment-respond js">
+			<h3 id="reply-title" class="comment-reply-title">Berikan Balasan <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://tekekwalik.wordpress.com/2014/06/30/membuat-login-untuk-multi-user-di-codeigniter/#respond" style="display:none;">Batalkan balasan</a></small></h3>				<form action="https://tekekwalik.wordpress.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+					<input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="8019b71d7c"><input type="hidden" name="_wp_http_referer" value="/2014/06/30/membuat-login-untuk-multi-user-di-codeigniter/">
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="guest">
+
+<div class="comment-form-field comment-textarea">
+	
+	<div id="comment-form-comment"><textarea tabindex="-1" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px; padding: 0px; box-sizing: content-box; word-wrap: break-word; overflow: hidden; transition: none; height: 0px !important; min-height: 0px !important; font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif; font-size: 14px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; text-decoration: none; word-spacing: 0px; text-indent: 0px; line-height: normal; width: 598px;" class="autosizejs "></textarea><textarea id="comment" name="comment" title="Ketikkan komentar di sini..." placeholder="Ketikkan komentar di sini..." style="height: 36px; overflow: hidden; word-wrap: break-word; resize: none;"></textarea></div>
+</div>
+
+<div id="comment-form-identity" style="display: none;">
+
+	<div id="comment-form-nascar">
+		<p>Isikan data di bawah atau klik salah satu ikon untuk log in:</p>
+		<ul>
+			<li class="selected" style="display:none;">
+				<a href="https://tekekwalik.wordpress.com/2014/06/30/membuat-login-untuk-multi-user-di-codeigniter/#comment-form-guest" id="postas-guest" title="Tamu">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="https://tekekwalik.wordpress.com/2014/06/30/membuat-login-untuk-multi-user-di-codeigniter/#comment-form-load-service:WordPress.com" id="postas-wordpress" title="WordPress.com">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="https://tekekwalik.wordpress.com/2014/06/30/membuat-login-untuk-multi-user-di-codeigniter/#comment-form-load-service:Twitter" id="postas-twitter" title="Twitter">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="https://tekekwalik.wordpress.com/2014/06/30/membuat-login-untuk-multi-user-di-codeigniter/#comment-form-load-service:Facebook" id="postas-facebook" title="Facebook">
+					<span></span>
+				</a>
+			</li>
+			<li>
+			<iframe id="googleplus-sign-in" name="googleplus-sign-in" src="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/saved_resource(8).html" width="24" height="24" scrolling="no" allowtransparency="true" seamless="seamless" frameborder="0"></iframe>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank">				<img src="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/ad516503a11cd5ca435acc9bb6523536" alt="Gravatar" width="25" class="no-grav">
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Surel <span class="required">(wajib)</span> <span class="nopublish">(Alamat takkan pernah dipublikasikan)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Nama <span class="required">(wajib)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Situs web</label>
+					<div class="comment-form-input"><input id="url" name="url" type="text" value=""></div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/wplogo.png" alt="Logo WordPress.com" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="">
+				<p class="comment-form-posting-as pa-wordpress"><strong></strong> You are commenting using your WordPress.com account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;wordpress&#39; );">Logout</a>&nbsp;/&nbsp;<a href="https://tekekwalik.wordpress.com/2014/06/30/membuat-login-untuk-multi-user-di-codeigniter/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Ubah</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/ad516503a11cd5ca435acc9bb6523536" alt="Gambar Twitter" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="">
+				<p class="comment-form-posting-as pa-twitter"><strong></strong> You are commenting using your Twitter account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;twitter&#39; );">Logout</a>&nbsp;/&nbsp;<a href="https://tekekwalik.wordpress.com/2014/06/30/membuat-login-untuk-multi-user-di-codeigniter/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Ubah</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/ad516503a11cd5ca435acc9bb6523536" alt="Foto Facebook" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="">
+				<p class="comment-form-posting-as pa-facebook"><strong></strong> You are commenting using your Facebook account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;facebook&#39; );">Logout</a>&nbsp;/&nbsp;<a href="https://tekekwalik.wordpress.com/2014/06/30/membuat-login-untuk-multi-user-di-codeigniter/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Ubah</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/ad516503a11cd5ca435acc9bb6523536" alt="Foto Google+" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="">
+				<p class="comment-form-posting-as pa-googleplus"><strong></strong> You are commenting using your Google+ account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;googleplus&#39; );">Logout</a>&nbsp;/&nbsp;<a href="https://tekekwalik.wordpress.com/2014/06/30/membuat-login-untuk-multi-user-di-codeigniter/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Ubah</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Batal</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div id="comment-form-subscribe" style="display: none;">
+	<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;" tabindex="6"> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Beri tahu saya komentar baru melalui email.</label></p></div>
+
+
+
+
+<p class="form-submit" style="display: none;"><input name="submit" type="submit" id="comment-submit" class="submit" value="Kirim Komentar"> <input type="hidden" name="comment_post_ID" value="24" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="59e3dc804a"></p>
+<input type="hidden" name="genseq" value="1455612304">
+<p style="display: none;"></p>				<input type="hidden" id="ak_js" name="ak_js" value="1455612318174"></form>
+					</div><!-- #respond -->
+		<div style="clear: both"></div>
+</div><!-- #comments .comments-area -->
+		</div><!-- #content .site-content -->
+
+	</div><!-- #primary .content-area -->
+
+
+	<div id="secondary" class="sidebar-container" role="complementary">
+		<div class="widget-area">
+			<aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="https://tekekwalik.wordpress.com/">
+				<label>
+					<span class="screen-reader-text">Cari:</span>
+					<input type="search" class="search-field" placeholder="Cari …" value="" name="s" title="Cari:">
+				</label>
+				<input type="submit" class="search-submit" value="Cari">
+			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widget-title">Pos-pos Terakhir</h3>		<ul>
+					<li>
+				<a href="https://tekekwalik.wordpress.com/2014/07/12/komputer-grafik-home-theater/">komputer grafik “home&nbsp;theater”</a>
+						</li>
+					<li>
+				<a href="https://tekekwalik.wordpress.com/2014/06/30/membuat-login-untuk-multi-user-di-codeigniter/">MEMBUAT LOGIN UNTUK MULTI USER DI&nbsp;CODEIGNITER</a>
+						</li>
+					<li>
+				<a href="https://tekekwalik.wordpress.com/2014/06/30/launched-tekekwalik/">launched tekekwalik</a>
+						</li>
+				</ul>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h3 class="widget-title">Komentar Terakhir</h3></aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Arsip</h3>		<ul>
+			<li><a href="https://tekekwalik.wordpress.com/2014/07/">Juli 2014</a></li>
+	<li><a href="https://tekekwalik.wordpress.com/2014/06/">Juni 2014</a></li>
+		</ul>
+		</aside><aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Kategori</h3>		<ul>
+	<li class="cat-item cat-item-1"><a href="https://tekekwalik.wordpress.com/category/uncategorized/">Uncategorized</a>
+</li>
+		</ul>
+</aside><aside id="meta-2" class="widget widget_meta"><h3 class="widget-title">Meta</h3>			<ul>
+			<li><a href="https://wordpress.com/start/id?ref=wplogin">Mendaftar</a></li>			<li><a href="https://tekekwalik.wordpress.com/wp-login.php">Masuk log</a></li>
+			<li><a href="https://tekekwalik.wordpress.com/feed/"><abbr title="Really Simple Syndication">RSS</abbr> Entri</a></li>
+			<li><a href="https://tekekwalik.wordpress.com/comments/feed/"><abbr title="Really Simple Syndication">RSS</abbr> Komentar</a></li>
+			<li><a href="https://wordpress.com/" title="Didukung oleh WordPress, state-of-the-art semantic personal publishing platform.">WordPress.com</a></li>			</ul>
+			</aside>		</div><!-- .widget-area -->
+	</div><!-- #secondary .sidebar-container -->
+
+
+		</div><!-- #main .site-main -->
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			
+<div id="tertiary" class="sidebar-container" role="complementary">
+
+	<div class="sidebar-inner">
+
+				<div class="widget-area">
+			<aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="https://tekekwalik.wordpress.com/">
+				<label>
+					<span class="screen-reader-text">Cari:</span>
+					<input type="search" class="search-field" placeholder="Cari …" value="" name="s" title="Cari:">
+				</label>
+				<input type="submit" class="search-submit" value="Cari">
+			</form></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widget-title">Pos-pos Terakhir</h3>		<ul>
+					<li>
+				<a href="https://tekekwalik.wordpress.com/2014/07/12/komputer-grafik-home-theater/">komputer grafik “home&nbsp;theater”</a>
+						</li>
+					<li>
+				<a href="https://tekekwalik.wordpress.com/2014/06/30/membuat-login-untuk-multi-user-di-codeigniter/">MEMBUAT LOGIN UNTUK MULTI USER DI&nbsp;CODEIGNITER</a>
+						</li>
+					<li>
+				<a href="https://tekekwalik.wordpress.com/2014/06/30/launched-tekekwalik/">launched tekekwalik</a>
+						</li>
+				</ul>
+		</aside>		<aside id="recent-comments-2" class="widget widget_recent_comments"><h3 class="widget-title">Komentar Terakhir</h3></aside><aside id="archives-2" class="widget widget_archive"><h3 class="widget-title">Arsip</h3>		<ul>
+			<li><a href="https://tekekwalik.wordpress.com/2014/07/">Juli 2014</a></li>
+	<li><a href="https://tekekwalik.wordpress.com/2014/06/">Juni 2014</a></li>
+		</ul>
+		</aside><aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Kategori</h3>		<ul>
+	<li class="cat-item cat-item-1"><a href="https://tekekwalik.wordpress.com/category/uncategorized/">Uncategorized</a>
+</li>
+		</ul>
+</aside><aside id="meta-2" class="widget widget_meta"><h3 class="widget-title">Meta</h3>			<ul>
+			<li><a href="https://wordpress.com/start/id?ref=wplogin">Mendaftar</a></li>			<li><a href="https://tekekwalik.wordpress.com/wp-login.php">Masuk log</a></li>
+			<li><a href="https://tekekwalik.wordpress.com/feed/"><abbr title="Really Simple Syndication">RSS</abbr> Entri</a></li>
+			<li><a href="https://tekekwalik.wordpress.com/comments/feed/"><abbr title="Really Simple Syndication">RSS</abbr> Komentar</a></li>
+			<li><a href="https://id.wordpress.com/?ref=footer_website">Buat situs web atau blog gratis di WordPress.com.</a></li>			</ul>
+			</aside>		</div><!-- .widget-area -->
+		
+		
+		
+	</div><!-- .sidebar-inner -->
+
+</div><!-- #tertiary .sidebar-container -->
+			<div class="site-info-container">
+
+				<div class="site-info">
+										<a href="https://id.wordpress.com/?ref=footer_website">Buat situs web atau blog gratis di WordPress.com.</a>
+					<a href="https://wordpress.com/themes/suits/" title="Pelajari lebih lanjut tentang tema ini">Tema Suits</a>.				</div><!-- .site-info -->
+
+			</div><!-- .site-info-container -->
+
+		</footer><!-- #colophon .site-footer -->
+
+	</div><!-- #page -->
+
+<!-- wpcom_wp_footer -->
+<script type="text/javascript" src="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/wpgroho.js"></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+
+			if (typeof Gravatar === "undefined"){
+				return;
+			}
+
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Memposkan Komentar\u2026","postCommentText":"Kirim Komentar","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Keluar","loginText":"Log Masuk","connectURL":"https:\/\/tekekwalik.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/tekekwalik.wordpress.com\/wp-login.php?action=logout&_wpnonce=86ce9635a5","homeURL":"https:\/\/tekekwalik.wordpress.com\/","postID":"24","gravDefault":"identicon","enterACommentError":"Silakan masukkan komentar","enterEmailError":"Masukkan alamat email di sini","invalidEmailError":"Alamat email tidak valid","enterAuthorError":"Masukkan nama Anda di sini","gravatarFromEmail":"Gambar ini akan tampil ketika Anda memberi komentar. Klik untuk mengubahnya.","logInToExternalAccount":"Log in untuk memakai data dari salah satu akun ini.","change":"Ubah","changeAccount":"Ubah Akun","comment_registration":"0","userIsLoggedIn":"","isJetpack":"0","text_direction":"ltr"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/saved_resource(4)"></script>
+
+	<div id="bit" class="loggedout-follow-normal" style="bottom: -278px;">
+		<a class="bsub" href="javascript:void(0)"><span id="bsub-text">Ikuti</span></a>
+		<div id="bitsubscribe">
+
+					<h3><label for="loggedout-follow-field">Ikuti “"Tekek walik"”</label></h3>
+
+			<form action="https://subscribe.wordpress.com/" method="post" accept-charset="utf-8" id="loggedout-follow">
+			<p>Kirimkan setiap pos baru ke Kotak Masuk Anda.</p>
+
+			<p id="loggedout-follow-error" style="display: none;"></p>
+
+			
+			<p><input type="email" name="email" placeholder="Masukkan alamat email Anda" id="loggedout-follow-field"></p>
+
+			<input type="hidden" name="action" value="subscribe">
+			<input type="hidden" name="blog_id" value="67177740">
+			<input type="hidden" name="source" value="https://tekekwalik.wordpress.com/2014/06/30/membuat-login-untuk-multi-user-di-codeigniter/">
+			<input type="hidden" name="sub-type" value="loggedout-follow">
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="0a36ddc3f3"><input type="hidden" name="_wp_http_referer" value="/2014/06/30/membuat-login-untuk-multi-user-di-codeigniter/">
+			<p id="bsub-subscribe-button"><input type="submit" value="Daftarkan saya"></p>
+			</form>
+					<div id="bsub-credit"><a href="https://id.wordpress.com/?ref=lof">Buat situs dengan WordPress.com</a></div>
+		</div><!-- #bitsubscribe -->
+	</div><!-- #bit -->
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/tekekwalik.wordpress.com\/2014\/06\/30\/membuat-login-untuk-multi-user-di-codeigniter\/":24};
+	</script>
+		<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-google-plus-1' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+		});
+		</script>
+				<iframe src="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/master.html" scrolling="no" id="likes-master" name="likes-master" style="display:none;"></iframe>
+		<div id="likes-other-gravatars"><div class="likes-text"><span>%d</span> blogger menyukai ini:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+		<script type="text/javascript">
+		//<![CDATA[
+			var jetpackLikesWidgetQueue = [];
+			var jetpackLikesWidgetBatch = [];
+			var jetpackLikesMasterReady = false;
+
+			function JetpackLikespostMessage( message, target ) {
+				if ( "string" === typeof message ){
+					try{
+						message = JSON.parse( message );
+					}
+					catch(e) {
+						return;
+					}
+				}
+
+				pm( {
+					target: target,
+					type: 'likesMessage',
+					data: message,
+					origin: '*'
+				} );
+			}
+
+			function JetpackLikesBatchHandler() {
+				var requests = [];
+				jQuery( 'div.jetpack-likes-widget-unloaded' ).each( function( i ) {
+					if ( jetpackLikesWidgetBatch.indexOf( this.id ) > -1 )
+						return;
+					jetpackLikesWidgetBatch.push( this.id );
+					var regex = /like-(post|comment)-wrapper-(\d+)-(\d+)-(\w+)/;
+					var match = regex.exec( this.id );
+					if ( ! match || match.length != 5 )
+						return;
+
+					var info = {
+						blog_id: match[2],
+						width:   this.width
+					};
+
+					if ( 'post' == match[1] ) {
+						info.post_id = match[3];
+					} else if ( 'comment' == match[1] ) {
+						info.comment_id = match[3];
+					}
+
+					info.obj_id = match[4];
+
+					requests.push( info );
+				});
+
+				if ( requests.length > 0 ) {
+					JetpackLikespostMessage( { event: 'initialBatch', requests: requests }, window.frames['likes-master'] );
+				}
+			}
+
+			function JetpackLikesMessageListener( event ) {
+				if ( "undefined" == typeof event.event )
+					return;
+
+				if ( 'masterReady' == event.event ) {
+					jQuery( document ).ready( function() {
+						jetpackLikesMasterReady = true;
+
+						var stylesData = {
+								event: 'injectStyles'
+						};
+
+						if ( jQuery( 'iframe.admin-bar-likes-widget' ).length > 0 ) {
+							JetpackLikespostMessage( { event: 'adminBarEnabled' }, window.frames[ 'likes-master' ] );
+
+							stylesData.adminBarStyles = {
+								background: jQuery( '#wpadminbar .quicklinks li#wp-admin-bar-wpl-like > a' ).css( 'background' ),
+								isRtl: ( 'rtl' == jQuery( '#wpadminbar' ).css( 'direction' ) )
+							};
+						}
+
+						if ( !window.addEventListener )
+							jQuery( '#wp-admin-bar-admin-bar-likes-widget' ).hide();
+
+						stylesData.textStyles = {
+							color: jQuery( '.sd-text-color').css( 'color' ),
+							fontFamily: jQuery( '.sd-text-color' ).css( 'font-family' ),
+							fontSize: jQuery( '.sd-text-color' ).css( 'font-size' ),
+							direction: jQuery( '.sd-text-color' ).css( 'direction' ),
+							fontWeight: jQuery( '.sd-text-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-text-color' ).css( 'font-style' ),
+							textDecoration: jQuery( '.sd-text-color' ).css('text-decoration')
+						};
+
+						stylesData.linkStyles = {
+							color: jQuery( '.sd-link-color' ).css('color'),
+							fontFamily: jQuery( '.sd-link-color' ).css('font-family'),
+							fontSize: jQuery( '.sd-link-color' ).css('font-size'),
+							textDecoration: jQuery( '.sd-link-color' ).css('text-decoration'),
+							fontWeight: jQuery( '.sd-link-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-link-color' ).css( 'font-style' )
+						};
+
+						JetpackLikespostMessage( stylesData, window.frames[ 'likes-master' ] );
+
+						JetpackLikesBatchHandler();
+
+						jQuery( document ).on( 'inview', 'div.jetpack-likes-widget-unloaded', function() {
+							jetpackLikesWidgetQueue.push( this.id );
+						});
+					});
+				}
+
+				if ( 'showLikeWidget' == event.event ) {
+					jQuery( '#' + event.id + ' .post-likes-widget-placeholder'  ).fadeOut( 'fast', function() {
+						jQuery( '#' + event.id + ' .post-likes-widget' ).fadeIn( 'fast', function() {
+							JetpackLikespostMessage( { event: 'likeWidgetDisplayed', blog_id: event.blog_id, post_id: event.post_id, obj_id: event.obj_id }, window.frames['likes-master'] );
+						});
+					});
+				}
+
+				if ( 'clickReblogFlair' == event.event ) {
+					wpcom_reblog.toggle_reblog_box_flair( event.obj_id );
+				}
+
+				if ( 'showOtherGravatars' == event.event ) {
+					var $container = jQuery( '#likes-other-gravatars' );
+					var $list = $container.find( 'ul' );
+
+					$container.hide();
+					$list.html( '' );
+
+					$container.find( '.likes-text span' ).text( event.total );
+
+					jQuery.each( event.likers, function( i, liker ) {
+						$list.append( '<li class="' + liker.css_class + '"><a href="' + liker.profile_URL + '" class="wpl-liker" rel="nofollow" target="_parent"><img src="' + liker.avatar_URL + '" alt="' + liker.name + '" width="30" height="30" style="padding-right: 3px;" /></a></li>');
+					} );
+
+					var offset = jQuery( "[name='" + event.parent + "']" ).offset();
+
+					$container.css( 'left', offset.left + event.position.left - 10 + 'px' );
+					$container.css( 'top', offset.top + event.position.top - 33 + 'px' );
+
+					var rowLength = Math.floor( event.width / 37 );
+					var height = ( Math.ceil( event.likers.length / rowLength ) * 37 ) + 13;
+					if ( height > 204 ) {
+						height = 204;
+					}
+
+					$container.css( 'height', height + 'px' );
+					$container.css( 'width', rowLength * 37 - 7 + 'px' );
+
+					$list.css( 'width', rowLength * 37 + 'px' );
+
+					$container.fadeIn( 'slow' );
+
+					var scrollbarWidth = $list[0].offsetWidth - $list[0].clientWidth;
+					if ( scrollbarWidth > 0 ) {
+						$container.width( $container.width() + scrollbarWidth );
+						$list.width( $list.width() + scrollbarWidth );
+					}
+				}
+			}
+
+			pm.bind( 'likesMessage', function(e) { JetpackLikesMessageListener(e); } );
+
+			jQuery( document ).click( function( e ) {
+				var $container = jQuery( '#likes-other-gravatars' );
+
+				if ( $container.has( e.target ).length === 0 ) {
+					$container.fadeOut( 'slow' );
+				}
+			});
+
+			function JetpackLikesWidgetQueueHandler() {
+				var wrapperID;
+				if ( ! jetpackLikesMasterReady ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				if ( jetpackLikesWidgetQueue.length > 0 ) {
+					// We may have a widget that needs creating now
+					var found = false;
+					while( jetpackLikesWidgetQueue.length > 0 ) {
+						// Grab the first member of the queue that isn't already loading.
+						wrapperID = jetpackLikesWidgetQueue.splice( 0, 1 )[0];
+						if ( jQuery( '#' + wrapperID ).hasClass( 'jetpack-likes-widget-unloaded' ) ) {
+							found = true;
+							break;
+						}
+					}
+					if ( ! found ) {
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				} else if ( jQuery( 'div.jetpack-likes-widget-unloaded' ).length > 0 ) {
+					// Grab any unloaded widgets for a batch request
+					JetpackLikesBatchHandler();
+
+					// Get the next unloaded widget
+					wrapperID = jQuery( 'div.jetpack-likes-widget-unloaded' ).first()[0].id;
+					if ( ! wrapperID ) {
+						// Everything is currently loaded
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				}
+
+				if ( 'undefined' === typeof wrapperID ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				var $wrapper = jQuery( '#' + wrapperID );
+				$wrapper.find( 'iframe' ).remove();
+
+				if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='22px' width='68px' frameBorder='0' scrolling='no' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				} else {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='55px' width='100%' frameBorder='0' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				}
+
+				$wrapper.removeClass( 'jetpack-likes-widget-unloaded' ).addClass( 'jetpack-likes-widget-loading' );
+
+				$wrapper.find( 'iframe' ).load( function( e ) {
+					var $iframe = jQuery( e.target );
+					$wrapper.removeClass( 'jetpack-likes-widget-loading' ).addClass( 'jetpack-likes-widget-loaded' );
+
+					JetpackLikespostMessage( { event: 'loadLikeWidget', name: $iframe.attr( 'name' ), width: $iframe.width() }, window.frames[ 'likes-master' ] );
+
+					if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+						$wrapper.find( 'iframe' ).Jetpack( 'resizeable' );
+					}
+				});
+				setTimeout( JetpackLikesWidgetQueueHandler, 250 );
+			}
+			JetpackLikesWidgetQueueHandler();
+		//]]>
+		</script>
+<script type="text/javascript" src="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/form.js"></script>
+<script type="text/javascript" src="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/saved_resource(5)"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://s0.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://s0.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?m=1363304414g&amp;ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var JetpackEmojiSettings = {"base_url":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/emoji\/twemoji\/"};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/saved_resource(6)"></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script><script src="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/w.js" type="text/javascript" async="" defer=""></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'67177740','blog_tz':'0','user_lang':'id','blog_lang':'id','user_id':'0'}]);
+_stq.push(['view', {'blog':'67177740','v':'wpcom','tz':'0','user_id':'0','post':'24','subd':'tekekwalik'}]);
+_stq.push(['extra', {'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdTdvUG14Q2VDQTR4LlUsLi82dU1mai9BMm9Fb2hGVnRfN3NfW1hTTVFvVnxRXTVdVWUwWkVCRXA1K2ljWitWLHZ4cFZWYXdJaGt1d0ZQWjFVcGNaWTNWcD9kUnlSfjV1fGNtcGhaSGhXSVMyK1csdlFkUkFabkJjLGh1VncxdXBfMENxcThyZmlfL185L1lsdklmc2xYZVgvR0wsSmR3Lj0mbGZMODRFTWJbeXNHY3FxRUQ/SEdVdFVpV0pCM2VpNC14Zys0aS1qUElTOUFBNi5qWkRfWEN5fndtVSZxWHlKS1d+dV1tUjM2fGU0WDkySyxVY05TaXN3T3hQbTFBK1RUMVRoYiZuTS9nZDMlbC5DQnI9eDdN'}]);
+_stq.push([ 'clickTrackerInit', '67177740', '24' ]);
+	</script>
+<noscript>&lt;img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /&gt;</noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+
+<img src="./MEMBUAT LOGIN UNTUK MULTI USER DI CODEIGNITER _ _Tekek walik__files/g.gif" id="wpstats"></body></html>
